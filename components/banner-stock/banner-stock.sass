@@ -1,0 +1,49 @@
+@use "../../global/include/_config.sass"
+.banner-stock
+	background: #f7f5f2
+	padding: 44px
+	display: flex
+	flex-direction: row
+	align-items: center
+	margin-bottom: 40px
+	@media ( max-width:  1024px )
+		padding: 20px
+		flex-direction: column
+		
+	&__title
+		font-weight: 500
+		font-size: 24px
+		line-height: 146%
+		font-family: 'Montserrat', sans-serif
+		color: #000	
+		align-items: center
+	&__img
+		margin-left: 48px
+		margin-right: auto
+		margin-top: -44px
+		margin-bottom: -44px
+		max-width: initial
+		@media ( max-width:  1024px )
+			margin:  20px 0  20px 0 
+			height: 100px
+	&__more
+		font-weight: 500
+		font-size: 15px
+		line-height: 160%
+		display: flex
+		flex-direction: row
+		align-items: center
+		letter-spacing: 0.01em
+		gap: 16px
+		color: config.$link
+		&:hover
+			color: config.$hover
+
+			span
+				border-bottom: 1px solid transparent
+		span 
+			border-bottom: 1px solid #ece6dc
+			padding: 0px 0px 4px 0px
+		svg
+			width: 37px
+			height: 8px

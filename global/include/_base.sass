@@ -1,0 +1,383 @@
+@use "./_config.sass"
+
+@charset "UTF-8"
+
+*
+    outline: none
+
+// кастомизация выделения текста на сайте
+// ======================================
+::selection
+    background:  config.$color
+    color: #fff !important
+
+::-moz-selection
+    background:  config.$color
+    color: #fff !important
+
+::-webkit-selection
+    background:  config.$color
+    color: #fff !important
+
+a::selection
+    background:  config.$color
+    color:  config.$link !important
+
+a::-moz-selection
+    background:  config.$color
+    color:  config.$link !important
+
+a::-webkit-selection
+    background:  config.$color
+    color:  config.$link !important
+
+// Описание базовых стилей для элементов
+// =====================================
+body
+    color: #777777
+    height: 100%
+    @include config.montserrat400
+    position: relative
+    overflow-x: hidden!important
+    +config.max-width( config.$mobail)
+        @include config.montserrat400
+        text-align: center
+
+a, input, button, textarea, *:before, *:after, *:hover, *:active, *:focus
+    outline: none
+
+a
+    color:  config.$hover
+    text-decoration: none
+    transition: color 0.3s ease, opacity 0.3s ease, border 0.3s ease
+    &:hover, &:active, &:focus
+        color:  config.$black
+        text-decoration: none
+small
+    font: 12px/130%  config.$font
+
+hr
+    border: 0 none !important
+    margin: 30px 0
+
+button
+    display: block
+    padding: 0
+    background: none
+    border: none
+    cursor: pointer
+    &:hover,
+    &:active,
+    &:focus
+        outline: 0 none !important
+
+.disable-hover, .disable-hover *
+    pointer-events: none !important
+
+.hidden
+    display: none
+
+img
+    max-width: 100%
+    height: auto
+    vertical-align: bottom
+
+.center
+    text-align: center
+
+i, em
+    font-style: italic
+
+b, strong
+    font-weight: bold
+
+p, li
+    a
+        transition: color .3s ease
+
+img
+    &[style='float: left'], &[align="left"]
+        margin: 0 10px 10px 0
+        display: block
+        +config.max-width(576px)
+            float: none !important
+            margin: 0 auto 10px
+
+    &[style='float: left'], &[align="left"]
+        margin: 0 10px 10px 0
+        display: block
+        +config.max-width(576px)
+            float: none !important
+            margin: 0 auto 10px
+
+    &[style='float: right'], &[align="right"]
+        margin: 0 auto 10px 10px
+        display: block
+        +config.max-width(576px)
+            float: none !important
+            margin: 0 auto 10px
+
+    &[style='float: right'], &[align="right"]
+        margin: 0 auto 10px 10px
+        display: block
+        +config.max-width(576px)
+            float: none !important
+            margin: 0 auto 10px
+
+fieldset
+    border: none
+    margin: 0
+    padding: 0
+
+.red
+    color:  config.$red
+
+// Запрет на "hover" при скроллинге страницы
+// =========================================
+.disable-hover, .disable-hover *
+    pointer-events: none !important
+
+// ========
+// WRAPPERS
+// ========
+
+.full-wrapper
+    +config.full-wrapper
+
+.hide
+    display: none
+
+.show
+    display: block
+
+// Для блока "Контент"
+// ===================
+
+.wrapper
+    height: auto !important
+    margin: 0 auto
+    min-height: 100%
+    overflow: hidden
+    +config.max-width( config.$tablet)
+
+    +config.max-width( config.$mobail)
+        padding: 0
+
+    &--main
+        padding: 0
+        +config.max-width( config.$tablet)
+
+        +config.max-width( config.$mobail)
+            padding: 0
+
+.wrapper-dia
+    padding: 0
+
+.middle
+    margin: 150px auto 0 auto !important
+    position: relative
+    min-height: 400px
+    background: transparent
+    overflow: hidden
+
+    +config.max-width( config.$mobail)
+        min-height: inherit
+    +config.max-width(990px)
+        margin: 150px auto 0 auto !important
+
+.open
+    /* margin-top: 161px!important */
+    +config.max-width(990px)
+        /* margin: 105px auto 0 auto !important */
+
+.content
+    position: relative
+
+.content-table
+    position: relative
+    height: 100%
+    display: table
+    min-height: 100%
+    width: 100%
+    &__cell
+        position: relative
+        height: 100%
+        display: table-cell
+        vertical-align: middle
+        width: 100%
+
+    &__inline
+        display: inline-block
+        width: 100%
+
+// Заголовки
+// =========
+h1,
+.h1
+   /**  color:  config.$link
+    font: bold 36px/100%  config.$fontBe
+    margin: 40px 0 30px 0
+    display: block
+    text-align: center
+    +config.max-width( config.$tablet)
+    font-size: 30px
+    margin: 30px 0 25px
+    +config.max-width( config.$mobail)
+    font-size: 30px
+    margin: 30px 0 20px
+    text-align: center **/
+
+.big-title
+    color:  config.$link
+    font: bold 108px/100%  config.$fontBe
+    margin: 40px 0 60px 0
+    display: block
+    +config.max-width( config.$tablet)
+        font: bold 42px/100%  config.$fontBe
+        margin: 30px 0 45px
+    +config.max-width( config.$mobail)
+        font: bold 36px/100%  config.$fontBe
+        margin: 30px 0 25px
+        text-align: center
+
+.second-title
+    color:  config.$link
+    font: bold 51px/122%  config.$fontBe
+    display: block
+    +config.max-width( config.$tablet)
+        font: bold 42px/122%  config.$fontBe
+    +config.max-width( config.$sm-tablet)
+        font: bold 42px/122%  config.$fontBe
+
+.title-color
+    color:  config.$link
+    font: bold 30px/100%  config.$fontBe
+    margin: 30px 0 20px 0
+    display: block
+    +config.max-width( config.$tablet)
+        font: bold 28px/100%  config.$fontBe
+        margin: 30px 0 25px
+    +config.max-width( config.$mobail)
+        font: bold 20px/110%  config.$fontBe
+        margin: 30px 0 20px
+        text-align: center
+
+h2,
+.h2
+    //color:  config.$color
+    //font: bold 18px/130%  config.$font
+    //margin: 0 0 20px
+    //display: block
+    +config.max-width( config.$tablet)
+        //font: bold 18px/130%  config.$font
+        //margin: 0 0 15px
+    +config.max-width( config.$mobail)
+        //font: bold 18px/130%  config.$font
+        //text-align: center
+
+h3,
+.h3
+    //color:  config.$color
+    //font: 400 18px/130%  config.$font
+    //margin: 0 0 20px
+    //display: block
+    +config.max-width( config.$tablet)
+        //font: 400 18px/130%  config.$font
+        //margin: 0 0 15px
+    +config.max-width( config.$mobail)
+        //font: 400 18px/130%  config.$font
+        //text-align: center
+
+h4,
+.h4
+    //color:  config.$color
+    //font: 400 16px/130%  config.$font
+    //margin: 0 0 10px 0
+    //display: block
+    +config.max-width( config.$tablet)
+        //font: 400 16px/130%  config.$font
+    +config.max-width( config.$mobail)
+        //font: 400 16px/130%  config.$font
+        //text-align: center
+
+.section-text
+    display: block
+    color: #777
+    margin: 20px auto
+    +config.max-width( config.$mobail)
+        text-align: center
+
+// Секции на главной старнице
+// ==========================
+.main-section
+    position: absolute
+    display: flex
+    width: 100%
+    align-items: center
+    z-index: -1
+    padding: 0 0 100px 0
+    +config.max-width( config.$mobail)
+        height: 100vh !important
+        margin: 10px auto 0
+        padding: 0
+        align-items: flex-start
+
+    &.active
+        z-index: 1
+
+.button-down
+    display: none
+    +config.max-width( config.$mobail)
+        display: block
+        position: fixed
+        bottom: 10px
+        color:  config.$link
+        left: 50%
+        transform: translateX(-50%)
+        z-index: 10
+
+    &__title
+        font: 16px/138%  config.$font
+        +config.max-width( config.$mobail)
+            font: 12px/125%  config.$font
+
+    &__icon
+        font-size: 74px
+        margin: 0 0 0 20px
+        transform: rotate(90deg)
+        +config.max-width( config.$mobail)
+            font-size: 47px
+            margin: 0 0 0 10px
+
+.have-preloader
+    position: relative
+    &:before
+        content: none
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: url(/local/static/build/img/ui/button-preloader.gif) no-repeat 50% 50%
+        z-index: -1
+
+    &.loading
+        &:before
+            content: ''
+            z-index: 1
+
+        button
+            font-size: 0
+
+.slick-arrow.slick-disabled
+    opacity: .6 !important
+
+.m
+    @media(max-width: 768px)
+        &-bmd
+            &-0
+                margin: 0
+
+.container-fluid.first .slick-slide
+    @media(max-width: 768px)
+        min-width: 100vw

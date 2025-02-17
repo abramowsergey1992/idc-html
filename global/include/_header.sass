@@ -1,0 +1,522 @@
+@use "config"
+@charset "UTF-8"
+body.fixed
+  overflow: hidden
+
+.header-bg
+  position: absolute
+  top: 150px
+  right: 0
+  width: 100%
+  height: 100vh
+  background: rgba(0, 0, 0, 0.6)
+  z-index: 1
+  display: none
+  opacity: 0
+  transition: .3s
+  cursor: pointer
+  +config.max-width(990px)
+    top: 105px
+  &.active
+    opacity: 1
+    display: block
+
+//HEADER
+.header
+  width: 100%
+  position: absolute
+  top: 0
+  left: 0
+  transition: .3s
+  right: 0
+  z-index: 5
+  max-height: 150px
+  height: 150px
+  box-shadow: 0px 5px 14px 0px #00000014
+  +config.max-width(990px)
+    position: fixed
+    &.scroll
+      top: -55px
+
+.animated-href
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    height: 1px
+    width: 0
+    background: transparent
+    transition: .3s
+  &:hover:before
+    width: 100%
+  &:active
+    color: #C6AA76
+    &:before
+      width: 100%
+      background: #C6AA76
+
+.down-arrow
+  position: relative
+  padding-right: 15px
+  cursor: pointer
+  +config.max-width(400px)
+    padding-right: 10px
+  &.active
+    &:before
+      top: 16%
+      transform: rotate(270deg)
+
+  &:before
+    content: ''
+    background: url("/local/templates/.default/images/black_arrow_small.png") no-repeat 0 0 / 6px 10px
+    width: 6px
+    height: 13px
+    position: absolute
+    transition: .1s
+    right: 0
+    top: 16%
+    transform: rotate(90deg)
+
+  &:hover
+    &:before
+      top: 26%
+      +config.max-width(990px)
+        top: 16%
+
+  &.menu-arrow:before
+    transition: .3s
+    top: 40%
+
+  &.menu-arrow:hover
+    &:before
+      top: 40%
+      transform: rotate(270deg)
+
+.header-top
+  background: #fff
+  display: flex
+  justify-content: space-between
+  height: 60px
+  padding: 15px 25px 15px
+  width: 100%
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+  +config.max-width(990px)
+    height: 55px
+    padding: 10px 20px
+  &__left
+    display: flex
+    align-items: center
+    +config.max-width(990px)
+      width: 100%
+      justify-content: space-between
+
+    .other-destinations
+      margin-right: 50px
+      +config.max-width(990px)
+        margin-right: 0px
+      +config.max-width(350px)
+        margin-right: 0px
+
+      &__title
+        @include config.montserrat300
+        font-size: 15px
+        line-height: normal
+        font-style: normal
+        color: #000
+        cursor: pointer
+        +config.max-width(400px)
+          font-size: 12px
+
+      &__wrapper
+        position: absolute
+        top: -2000px
+        left: 0
+        z-index: 20
+        display: none
+        transition: .3s
+        &.active
+          top: 110px
+          display: block
+          +config.max-width(990px)
+            top: 105px
+            width: 375px
+
+      &__list
+        padding: 0
+        display: flex
+        flex-direction: column
+        +config.max-width(990px)
+          height: 420px
+          padding: 0
+
+      &__item
+        margin: 0
+        padding: 30px 20px 20px 35px
+        display: flex
+        flex-direction: column
+        border-bottom: 2px solid #A09182
+        background-color: rgba(255, 255, 255, 0.8)
+        box-shadow: 5px 8px 15px 0px rgba(74, 74, 74, 0.25)
+        @include config.hover
+        &:hover
+          background-color: rgba(255, 255, 255, 1)
+          span.arrow-other
+            img
+              @include config.hover
+              left: -5px
+
+
+        &-img
+          position: relative
+          padding-right: 20px
+          cursor: pointer
+          display: flex
+          img
+            width: 104px
+            height: 19px
+          p
+            font-size: 12px
+            text-transform: lowercase
+            line-height: 14.06px
+            @include config.montserrat400
+            color: #000
+            margin-left: 29px
+
+            &.red-text
+              font-size: 16px
+              line-height: 18.75px
+              color: #76232F
+
+            &.blue-text
+              font-size: 12px
+              line-height: 9.5px
+              color: #4F758B
+              margin-top: 2px
+
+        .arrow-other
+          transform: rotate(180deg)
+          img
+            width: 33px
+            height: 34px
+            position: relative
+            top: 19px
+
+      &__text
+        @include config.montserrat300
+        margin: 0 !important
+        color: #000
+        font-size: 12px
+        text-align: left
+        line-height: 14px
+        +config.max-width(990px)
+          font-size: 12px
+          line-height: 14.4px
+
+  &__right
+    display: flex
+    align-items: center
+    +config.max-width(990px)
+      display: none
+
+  &__logo
+    width: 161px
+    position: relative
+    margin-right: 60px
+    height: 30px
+    +config.max-width(990px)
+      margin-right: 0
+    +config.max-width(767px)
+      width: 94px
+      height: 17.5px
+
+    img
+      width: 100%
+      position: absolute
+      top: 0
+      height: 100%
+      object-fit: cover
+      +config.max-width(990px)
+        left: 0
+  &__email
+    @include config.montserrat300
+    font-size: 14px
+    line-height: 16.4px
+    color: #000
+    margin-right: 18px
+
+  &__tell
+    @include config.montserrat300
+    font-size: 14px
+    line-height: 16.4px
+    color: #000
+    margin-right: 18px
+
+  &__adr
+    @include config.montserrat300
+    font-size: 14px
+    line-height: 16.4px
+    color: #000
+    display: flex
+    align-items: center
+
+.header-top__right img
+  margin-left: 11px
+
+.header-bottom
+  padding: 15px 25px
+  display: flex
+  align-items: center
+  background: #fff
+  height: 50px
+  +config.max-width(990px)
+    height: 50px
+    padding: 15px
+    justify-content: space-between
+  +config.max-width(350px)
+    padding: 10px
+
+  .other-destinations
+    margin-right: 50px
+    +config.max-width(990px)
+      margin-right: 25px
+    +config.max-width(350px)
+      margin-right: 0px
+
+    &__title
+      @include config.montserrat300
+      font-size: 15px
+      line-height: normal
+      font-style: normal
+      color: #000
+      cursor: pointer
+      +config.max-width(400px)
+        font-size: 12px
+
+    &__wrapper
+      position: absolute
+      top: -2000px
+      left: 0
+      z-index: 20
+      display: none
+      transition: .3s
+      &.active
+        top: 110px
+        display: block
+        +config.max-width(990px)
+          top: 105px
+          width: 375px
+
+    &__list
+      padding: 0
+      display: flex
+      flex-direction: column
+      +config.max-width(990px)
+        height: 449px
+        padding: 17px 0 34px 20px
+
+    &__item
+      margin: 0
+      padding: 30px 20px 20px 35px
+      display: flex
+      flex-direction: column
+      border-bottom: 2px solid #A09182
+      background-color: rgba(255, 255, 255, 0.8)
+      box-shadow: 5px 8px 15px 0px rgba(74, 74, 74, 0.25)
+      @include config.hover
+      &:hover
+        background-color: rgba(255, 255, 255, 1)
+        span.arrow-other
+          img
+            @include config.hover
+            left: -5px
+
+
+      &-img
+        position: relative
+        padding-right: 20px
+        cursor: pointer
+        display: flex
+        img
+          width: 104px
+          height: 19px
+        p
+          font-size: 12px
+          text-transform: lowercase
+          line-height: 14.06px
+          @include config.montserrat400
+          color: #000
+          margin-left: 29px
+
+          &.red-text
+            font-size: 16px
+            line-height: 18.75px
+            color: #76232F
+
+          &.blue-text
+            font-size: 12px
+            line-height: 9.5px
+            color: #4F758B
+            margin-top: 2px
+
+      .arrow-other
+        transform: rotate(180deg)
+        img
+          width: 33px
+          height: 34px
+          position: relative
+          top: 19px
+
+    &__text
+      @include config.montserrat300
+      margin: 0 !important
+      color: #000
+      font-size: 12px
+      text-align: left
+      line-height: 14px
+      +config.max-width(990px)
+        font-size: 12px
+        line-height: 14.4px
+
+  &__logo
+    width: 97px
+    position: relative
+    margin-right: 60px
+    height: 31px
+    +config.max-width(990px)
+      flex: 1 1
+      text-align: left
+      margin-right: 0
+    +config.max-width(370px)
+      display: flex
+      align-items: flex-end
+      img
+        width: auto !important
+        top: auto !important
+        height: auto !important
+    img
+      width: 100%
+      position: absolute
+      top: 0
+      height: 100%
+      object-fit: cover
+      +config.max-width(990px)
+        width: 30px !important
+        height: 15px !important
+        top: 9px !important
+        left: 12px !important
+      +config.max-width(450px)
+        left: 40px !important
+      +config.max-width(350px)
+        left: 35px !important
+
+  .header-nav
+    display: flex
+    align-items: center
+
+    &__item
+      @include config.montserrat300
+      font-size: 16px
+      line-height: 18.75px
+      color: #000
+
+  &__search
+    display: flex
+    flex: 1 1
+    margin-left: 20px
+    border-left: 1px solid rgba(0, 0, 0, 0.1)
+    +config.max-width(1220px)
+      margin-left: 0
+      padding-left: 10px
+    +config.max-width(990px)
+      border: none !important
+      padding: 0 !important
+      flex: 0 0
+
+
+  &__bucket
+    display: flex
+    position: relative
+    +config.max-width(990px)
+      margin: 0 18px
+      img
+        height: 35px
+    +config.max-width(350px)
+      margin: 0 15px
+      img
+        height: 40px
+    img
+      height: 25px
+    +config.max-width(767px)
+      height: 25px
+    p
+      position: absolute
+      top: -5px
+      right: -9px
+      @include config.montserrat500
+      font-size: 14px
+      color: #fff
+      line-height: 18px
+      height: 19.5px
+      width: 19.5px
+      border-radius: 50%
+      background: #B00000
+      text-align: center
+      display: none
+      &.active
+        display: block
+      &.big
+        font-size: 13px
+        +config.max-width(990px)
+          font-size: 10px
+      +config.max-width(990px)
+        width: 16.5px
+        height: 16.5px
+        justify-content: center
+        align-items: center
+        font-size: 12px
+        &.active
+          display: flex
+  &__icons
+    display: none
+    +config.max-width(990px)
+      display: flex
+      align-items: center
+    a
+      display: flex
+      margin: 0 16px
+      +config.max-width(400px)
+        margin: 0 12px
+
+      &.email img
+        height: auto
+      &.phone img
+        height: auto
+
+.header-bottom.ticker
+  position: relative
+  padding: 0px 25px 0px
+  height: 35px
+  border-top: 1px solid  config.$gold
+  +config.max-width(990px)
+    padding: 0
+    height: 40px
+
+.cross
+  position: absolute
+  top: 0px
+  right: 10px
+  z-index: 9
+
+.str
+  @include config.montserrat300
+  font-size: 16px
+  text-transform: uppercase
+  color: #A27D4F
+  .bolder
+    font-weight: 500
+  .thin
+    font-weight: 500
+    text-transform: lowercase
+    font-size: 14px

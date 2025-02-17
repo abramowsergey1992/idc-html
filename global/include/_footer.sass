@@ -1,0 +1,585 @@
+@use "_config"
+@charset "UTF-8"
+
+.footer-dia
+  margin: 0 !important
+
+.row-dia
+  margin-top: 30px
+
+.footer
+  position: relative
+  color:  config.$gold
+  overflow: hidden
+
+  &--main
+    margin: 0
+    z-index: 11
+    +config.max-height(898px)
+      margin: 0
+    +config.max-width( config.$tablet)
+      margin: 0
+    +config.max-width( config.$mobail)
+      margin: 0
+
+    .footer-coop
+      +config.max-height(800px)
+        opacity: 0
+
+    .footer-text
+      display: none
+      +config.max-height(800px)
+        opacity: 0
+
+    &.active
+      transition: transform .5s
+      +config.max-width( config.$mobail)
+        transform: translateY(-99%) !important
+
+// footer-top
+// ==========
+.footer-top
+  position: relative
+
+// menu-furniture
+// ==============
+.menu-furniture
+  margin: 0 0 16px 0
+  position: relative
+
+  &__button
+    position: relative
+    padding: 10px
+    +config.max-width( config.$mobail)
+      padding: 10px 0 0 0
+      border: 0 none
+
+      .full-wrapper
+        margin: 0
+
+  &__hidden
+    position: relative
+
+  &__item
+    position: relative
+
+  &__title
+    position: relative
+
+  &__content
+    position: relative
+    display: flex
+    width: 100%
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
+    padding: 0
+    max-height: 0
+    opacity: 0
+    overflow: hidden
+    transition: max-height .3s ease, padding .3s ease, opacity .3s ease
+
+
+  &__btn-wrapper
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    +config.max-width( config.$mobail)
+      flex-direction: column
+      align-items: center
+
+  &__element
+    position: relative
+    margin: 7px 25px
+    +config.max-width( config.$mobail)
+      display: block
+      width: 100%
+      text-align: center
+
+    a
+      font-family: 'Montserrat'
+      font-size: 18px
+      font-style: normal
+      font-weight: 400
+      line-height: 18px
+      letter-spacing: 0em
+      text-align: center
+      color:  config.$gold
+      margin: 0 !important
+
+
+.tabs__section.active .menu-furniture__content
+  max-height: 100%
+  opacity: 1
+  padding: 38px 0 22px 0
+  +config.max-width( config.$mobail)
+    padding: 38px 0
+
+.menu-furniture-btn
+  position: relative
+  cursor: pointer
+  display: block
+  width: auto
+  background-color: transparent
+  font: 400 22px 'Montserrat'
+  color:  config.$gold
+  line-height: 22px
+  opacity: 1
+  transition: color .3s ease, background .3s ease, opacity .3s ease, border .3s ease
+  +config.max-width( config.$mobail)
+    flex: 100% 0 0
+    width: 320px
+    margin: 0 0 20px 0
+  +config.max-width( config.$sm-mobail)
+    width: 300px
+
+  span
+    position: relative
+    z-index: 1
+    padding: 0 40px 0 0 !important
+    +config.max-width(740px)
+      display: block
+      width: 100%
+    &:after
+      content: ''
+      position: absolute
+      right: 0
+      top: 2px
+      width: 35px !important
+      height: 100%
+      background: url("/local/static/build/img/svg/arrow-right.svg") center center/35px 35px no-repeat
+      transform: rotate(90deg)
+      transition: .3s all ease-in
+
+    &:hover:after
+      top: 7px
+
+  &.active
+    span
+      &:after
+        top: 2px
+        transform: rotate(-90deg)
+
+.tabs
+  position: relative
+
+  &__tabs
+    position: relative
+    text-align: center
+
+  &__tab
+    position: relative
+
+  &__section
+    position: relative
+    max-height: 0
+    overflow: hidden
+    opacity: 0
+    transition: max-height .3s ease, max-height .3s ease, padding .3s ease, opacity .3s ease
+
+    &.active
+      max-height: 100%
+      opacity: 1
+
+// footer-center
+// =============
+.footer-center
+  position: relative
+  display: flex
+  width: 100%
+  flex-wrap: wrap
+  background:  config.$black
+  padding: 65px 0 12px
+  +config.max-width( config.$mobail)
+    text-align: center
+    padding: 40px 0 31px
+
+  &__wrapper
+    position: relative
+    width: 100%
+
+  &__item
+    position: relative
+    width: 100%
+
+    &--menu
+      +config.max-width( config.$tablet)
+        margin: 0 0 20px 0
+
+    .footer_phone
+      @include config.montserrat400
+      font-size: 26px
+      line-height: 39px
+      color:  config.$gold
+      +config.max-width( config.$mobail)
+        text-align: center
+        color:  config.$gold
+
+    .footer_email
+      @include config.montserrat400
+      font-size: 18px
+      line-height: 27px
+      color:  config.$gold
+      +config.max-width( config.$mobail)
+        text-align: center
+        color:  config.$gold
+
+    .f-phone
+      padding-top: 24px
+      +config.max-width( config.$mobail)
+        text-align: center
+        padding-top: 33px
+        padding-bottom: 24px
+        border-top: 2px solid  config.$gold
+
+    .f-email
+      padding-bottom: 42px
+      +config.max-width( config.$mobail)
+        text-align: center
+        padding-bottom: 27px
+        border-bottom: 2px solid  config.$gold
+
+// footer-logo
+// ===========
+.footer-logo
+  position: relative
+  display: flex
+  margin: 0 0 20px 0
+  +config.max-width( config.$mobail)
+    width: 100%
+    justify-content: space-between
+    border-bottom: 2px solid  config.$gold
+
+  &__item
+    position: relative
+    display: block
+    +config.max-width( config.$mobail)
+      margin: 0 0 15px
+
+  &__item + &__item
+    margin: 0 0 0 20px
+    +config.max-width( config.$mobail)
+      margin: 0 0 15px
+
+  &__link
+    position: relative
+    display: block
+
+    img
+      height: 32px
+      +config.max-width( config.$mobail)
+        margin: 0 auto
+        max-height: 30px
+
+    &--brand
+      img
+        height: 32px
+
+    &:hover
+      opacity: 0.7
+      @include config.hover
+
+// footer-payment
+// ==============
+.footer-payment
+  position: relative
+  margin: 0
+  +config.max-width( config.$mobail)
+    text-align: left
+    display: flex
+
+  &__title
+    display: inline-block
+    text-transform: initial
+    margin: 0 0 4px 0
+    @include config.montserrat400
+    font-size: 14px
+    line-height: 21px
+    +config.max-width( config.$mobail)
+      margin: 15px 0
+
+  &__grid
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    +config.max-width( config.$mobail)
+      justify-content: start
+      flex-wrap: nowrap
+      align-items: center
+      margin: 0 0 20px 0
+
+  &__item
+    position: relative
+    display: block
+    margin: 0 0 13px 0
+    +config.max-width( config.$mobail)
+      margin: 0
+      display: flex
+
+    &:last-child
+      width: 100%
+      margin: 0 0 0px 2px !important
+      +config.max-width( config.$mobail)
+        width: auto
+
+    img
+      max-height: 38px
+      max-width: 140px
+      +config.max-width( config.$tablet)
+        max-height: 34px
+      +config.max-width( config.$mobail)
+        max-width: 100px
+        max-height: 30px
+
+    &--pay-keeper
+      img
+        +config.max-width( config.$tablet)
+          max-height: 22px
+
+  &__item + &__item
+    margin: 0 0 15px 20px
+    +config.max-width( config.$tablet)
+      margin: 0 0 10px 20px
+    +config.max-width( config.$mobail)
+      margin: 0 0 0 10px
+
+// footer-social
+// =============
+.footer-social
+  position: relative
+  display: flex
+  width: 100%
+  padding-top: 26px
+  +config.max-width( config.$mobail)
+    justify-content: start
+    flex-wrap: nowrap
+    align-items: center
+    margin: 0 0 23px 0
+    padding-top: 13px
+
+  &__item
+    position: relative
+    margin: 0 0 0 7px
+
+    &:first-child
+      margin: 0
+
+  &__link
+    position: relative
+    display: inline-block
+    +config.max-width( config.$mobail)
+      margin-right: 30px
+
+    img
+      height: 25px
+      width: 25px
+
+    &:hover
+      opacity: 0.7
+
+// footer-info
+// ===========
+.footer-info
+  position: relative
+  text-align: right
+  +config.max-width( config.$tablet)
+    text-align: left
+  +config.max-width( config.$mobail)
+    text-align: center
+
+  &__phone
+    position: relative
+    font: bold 20px/100%  config.$font
+    margin: 0 0 5px 0
+
+    a
+      color:  config.$white
+      display: inline-block
+
+      &:hover
+        opacity: 0.7
+
+  &__email
+    position: relative
+    font: 400 14px/100%  config.$font
+    margin: 0 0 15px 0
+
+    a
+      color:  config.$white
+      display: inline-block
+      text-transform: uppercase
+
+      &:hover
+        opacity: 0.7
+
+  &__messenger
+    position: relative
+    margin: 0 0 20px 0
+    +config.max-width( config.$mobail)
+      margin: 0
+
+// footer-messenger
+// ================
+.footer-messenger
+  position: relative
+  display: flex
+  width: 100%
+  justify-content: flex-end
+  +config.max-width( config.$tablet)
+    justify-content: flex-start
+  +config.max-width( config.$mobail)
+    justify-content: center
+
+  &__item
+    position: relative
+    display: block
+    margin: 0 20px 20px 0
+
+    &:last-child
+      margin: 0 0 20px
+
+  &__link
+    position: relative
+    display: inline-block
+
+    img
+      height: 30px
+      width: 30px
+      +config.max-width( config.$mobail)
+        height: 35px
+        width: 35px
+
+    &:hover
+      opacity: 0.7
+
+// footer-coop
+// ===========
+.footer-coop
+  position: relative
+  @include config.montserrat400
+  color:  config.$gold
+  font-size: 10px
+  line-height: 12px
+  text-transform: uppercase
+  margin: 0px 0 0 10px
+
+  +config.max-width( config.$tablet)
+    margin: 30px 0 0
+  +config.max-width( config.$mobail)
+    margin: 9px 10px 0
+    text-align: left
+
+  &__decor
+    display: block
+    margin: 5px 0 0 0
+    +config.max-width( config.$mobail)
+      display: inline-block
+
+    span
+      position: relative
+      margin: 0 0 3px 0px
+      display: inline-block
+
+// footer-text
+// ===========
+.footer-text
+  position: relative
+  font: 9px/160%  config.$font
+  color:  config.$gold
+  text-transform: uppercase
+  +config.max-width( config.$mobail)
+    display: none
+
+// Навверх
+// =======
+#back-top
+  position: fixed
+  bottom: 100px
+  right: 50px
+  width: 50px
+  height: 50px
+  z-index: 99
+  margin: 0 !important
+  display: none
+  +config.max-width( config.$tablet)
+    display: none
+    bottom: 50px
+  +config.max-width( config.$mobail)
+    display: none !important
+
+  a
+    width: 50px
+    height: 50px
+    border-radius: 50px
+    background:  config.$link
+    box-shadow: 0px 0px 18px 0px rgba(169, 127, 72, 0.5)
+    display: block
+    transition: background .3s ease, opacity .3s ease
+
+    &:hover
+      background:  config.$hover
+      opacity: .7
+
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 50px
+      height: 50px
+      border-radius: 50px
+      transform: rotate(-90deg)
+      background-image: url('/local/static/build/img/svg/next-filter.svg')
+      background-repeat: no-repeat
+      background-position: 50% 50%
+      background-size: cover
+
+.custom_links
+  width: 120%
+  display: flex
+  justify-content: space-between
+  margin-top: 50px
+  +config.max-width( config.$mobail)
+    width: 100%
+    padding: 0 10px
+
+  a
+    @include config.montserrat400
+    font-size: 14px
+    line-height: 21px
+    text-decoration: none
+    color:  config.$gold
+    &:hover
+      opacity: 0.7
+
+  +config.max-width( config.$mobail)
+    width: 100%
+
+.footer_pad
+  +config.max-width( config.$mobail)
+    padding: 0 17px
+
+.fabric-title
+  @include config.montserrat400
+  margin-bottom: 10px
+  text-align: left
+
+.fdcr
+  +config.max-width(1199px)
+    flex-direction: column-reverse
+
+#bx_subscribe_btn_sljzMT
+  &::before
+    content: none
+    background: transparent
+
+.bx_subscribe_submit_container
+  #bx_subscribe_btn_sljzMT
+    color: #C6AA76!important
+
+.bx-composite-btn
+  display: none
+
+.roistat-online-chat-holder 
+  +config.max-width( config.$mobail)
+  bottom: 70px !important

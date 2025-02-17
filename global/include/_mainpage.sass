@@ -1,0 +1,693 @@
+@use "_config"
+@charset "UTF-8"
+
+.videoBack
+    position: relative
+    left: 0
+    z-index: 0
+    inset: 0px
+    overflow: hidden
+    background-size: cover
+    background-color: transparent
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-image: none
+    padding: 0
+    width: 100vw
+    height: 85vh
+    opacity: 0
+    +config.min-width(1200px)
+        height: auto
+        max-height: 770px
+    +config.max-width( config.$mobail)
+        height: 80vh
+
+    video
+        margin: auto
+        z-index: 0
+        visibility: visible
+        opacity: 1
+        width: 100%
+        height: auto
+        filter: brightness(0.5)
+        +config.max-width( config.$tablet)
+            height: 100vh
+            object-fit: cover
+
+    img.fon
+        margin: auto
+        z-index: 0
+        visibility: visible
+        opacity: 1
+        width: 100%
+        height: calc(100vh - 100px)
+        filter: brightness(0.5)
+        object-fit: cover
+        display: block
+        max-width: 100%
+        max-height: 770px
+        animation: name 25s linear infinite
+        @keyframes name
+            0%
+                transform: scale(1)
+            50%
+                transform: scale(1.2)
+            100%
+                transform: scale(1.4)
+        +config.max-width( config.$tablet)
+            height: 100vh
+            object-fit: cover
+
+    .slick-next
+        right: 20px
+        z-index: 99
+        width: 30px
+        height: 30px
+        background: url(/local/static/build/img/svg/slide_arrow_right_white.svg) 50%/30px 30px no-repeat
+        transition: .3s
+        +config.max-width( config.$mobail)
+            top: 52%
+        &::before
+            content: ""
+        &:hover
+            background: url(/local/static/build/img/svg/slide_arrow_right_white.svg) 50%/30px 30px no-repeat
+            opacity: .5
+            transition: .3s
+
+    .slick-prev
+        left: 20px
+        z-index: 99
+        width: 30px
+        height: 30px
+        transform: rotate(180deg)
+        background: url(/local/static/build/img/svg/slide_arrow_right_white.svg) 50%/30px 30px no-repeat
+        transition: .3s
+        &::before
+            content: ""
+        &:hover
+            transform: rotate(180deg)
+            background: url(/local/static/build/img/svg/slide_arrow_right_white.svg) 50%/30px 30px no-repeat
+            opacity: .5
+            transition: .3s
+
+h1.new__h1
+    @include config.montserrat400
+    font-size: 64px
+    line-height: 77px
+    color:  config.$white
+    text-transform: uppercase
+    margin: 0 0 0px 0
+    width: 80%
+    +config.max-width( config.$tablet)
+        font-size: 45px
+        line-height: 55px
+        width: 100%
+    +config.max-width( config.$mobail)
+        font-size: 40px
+        line-height: 40px
+        text-align: left
+        padding-right: 0%
+
+div.new__h1
+    @include config.montserrat400
+    font-size: 64px
+    line-height: 77px
+    color:  config.$white
+    text-transform: uppercase
+    margin: 0 0 0px 0
+    width: 80%
+    +config.max-width( config.$tablet)
+        font-size: 45px
+        line-height: 55px
+        width: 100%
+    +config.max-width( config.$mobail)
+        font-size: 40px
+        line-height: 40px
+        text-align: left
+        padding-right: 0%
+
+.main_p
+    @include config.montserrat300
+    font-size: 18px
+    line-height: 21px
+    color:  config.$white
+    margin-bottom: 50px
+    +config.max-width( config.$mobail)
+        font-size: 20px
+        text-align: left
+        padding-right: 5%
+        width: 90%
+        margin-top: 10px
+        margin-bottom: 10px
+
+.goTO
+    +config.max-width( config.$mobail)
+        text-align: left
+    a
+        @include config.montserrat400
+        font-size: 24px
+        line-height: 28%
+        color:  config.$white
+        +config.max-width( config.$mobail)
+            display: block
+            font-size: 22px!important
+            width: 50%
+            line-height: 100%
+
+h2.new__h2 
+    @include config.montserrat400
+    font-size: 45px
+    line-height: normal
+    text-transform: uppercase
+    text-align: center
+    color:  config.$black
+    margin-top: 100px
+    margin-bottom: 38px
+    +config.max-width( config.$mobail)
+        font-size: 30px
+        line-height: 35px
+        margin-top: 80px
+    +config.max-width( config.$ul-sm-mobai)
+        font-size: 25px
+        line-height: 30px
+        margin-top: 80px
+
+h2.new__h2.first_title
+    margin-top: 0px
+
+.videoBack.slick-dotted.slick-slider 
+    margin-bottom: 20px
+
+
+h3.new__h3
+    @include config.montserrat300
+    color:  config.$gold
+    font-size: 28px
+    line-height: 33px
+    text-align: center
+    margin-bottom: 38px
+    +config.max-width( config.$tablet)
+        font-size: 16px
+        line-height: 19px
+        margin-bottom: 30px
+        padding: 0 10%
+
+h4.new__h4
+    @include config.montserrat400
+    color:  config.$gold
+    font-size: 24px
+    line-height: 28px
+    text-align: center
+    margin-top: 38px
+    @include config.hover
+    +config.max-width( config.$mobail)
+        margin-top: 15px
+    a
+        @include config.montserrat400
+        color:  config.$gold
+        font-size: 24px
+        line-height: 28px
+        text-align: center
+        margin-top: 30px
+        +config.max-width( config.$mobail)
+            font-size: 18px
+            line-height: 21px
+        img
+            margin-bottom: 5px
+            margin-right: -5px
+    &:hover
+        @include config.hover
+        font-weight: 500
+
+h4.new__h4.tal
+    +config.max-width( config.$mobail)
+        text-align: left
+
+.substrate
+    position: absolute
+    top: 15%
+    left: 5%
+    +config.min-width(1200px)
+        top: 20%
+
+.bottom_arrow
+    position: absolute
+    bottom: 65px
+    display: flex
+    justify-content: center
+    width: 100%
+    &:hover
+        cursor: pointer
+    +config.min-width(1200px)
+        bottom: 20%
+    +config.max-width( config.$mobail)
+        bottom: 75px
+        left: 0
+
+.salons_text
+    @include config.montserrat300
+    font-size: 18px
+    line-height: 27px
+    color:  config.$black
+    +config.max-width( config.$tablet)
+        padding-right: 5%
+        padding-left: 5%
+        padding-top: 30px
+        padding-bottom: 30px
+    +config.max-width( config.$mobail)
+        padding-right: 5%
+        padding-top: 30px
+        padding-bottom: 30px
+        text-align: left
+
+.aic
+    display: flex
+    align-items: center
+
+.jcc
+    justify-content: center
+
+.fdc
+    flex-direction: column
+
+h2.custom-mb
+    margin-bottom: 38px
+
+.horeca-text
+    @include config.montserrat300
+    font-size: 18px
+    line-height: 27px
+    color: #000
+    padding-bottom: 25px
+    padding-right: 5%
+    +config.max-width( config.$tablet)
+        padding-left: 5%
+        padding-right: 5%
+    +config.max-width( config.$mobail)
+        font-size: 14px
+        line-height: 21px
+        padding-left: 0%
+        padding-right: 0%
+        text-align: left
+
+.horeca_list_item
+    margin-bottom: 10px
+
+.mt10
+    margin-top: 10px
+
+.design-text
+    @include config.montserrat300
+    font-size: 18px
+    line-height: 27px
+    color: #000
+    padding-left: 5%
+    +config.max-width( config.$mobail)
+        font-size: 14px
+        line-height: 21px
+        padding-left: 0%
+        padding-bottom: 15px
+        padding-top: 15px
+        text-align: left
+
+.picture_in_right
+    display: flex
+    justify-content: flex-end
+    img
+        +config.max-width( config.$mobail)
+            width: 90px
+
+.pr
+    position: relative
+    display: flex
+    flex-wrap: wrap
+
+.factory_text
+    position: absolute
+    width: 50%
+    bottom: 0
+    left: 0
+    padding: 73px 61px
+    @include config.montserrat300
+    font-size: 18px
+    line-height: 27px
+    color: #000
+    background: rgba(255, 255, 255, 0.8)
+    backdrop-filter: blur(7px)
+    margin-bottom: 18px
+    +config.max-width( config.$tablet)
+        position: relative
+    div
+        @include config.montserrat300
+        font-size: 16px
+        line-height: 24px
+        color: #000
+        p
+            @include config.montserrat300
+            font-size: 16px
+            line-height: 24px
+            color: #000
+
+.factory_text.proizvodstvo
+    position: absolute
+    width: 50%
+    bottom: 0
+    left: 0
+    padding: 73px 61px
+    @include config.montserrat300
+    font-size: 18px
+    line-height: 27px
+    color: #000
+    background: rgba(255, 255, 255, 0.8)
+    backdrop-filter: blur(7px)
+    margin-bottom: 0
+    +config.max-width( config.$tablet)
+        width: 50%
+        padding: 18px 26px
+        font-size: 14px
+        line-height: 21px
+        bottom: 0px
+    +config.max-width( config.$mobail)
+        width: 85%
+        padding: 18px 26px
+        font-size: 14px
+        line-height: 21px
+        bottom: -50px
+        text-align: left
+
+.mob_bottom
+    +config.max-width( config.$mobail)
+        margin-bottom: 150px
+        padding-right: 0
+        padding-left: 50px
+
+.mob_text
+    +config.max-width( config.$mobail)
+        margin: 20px 0
+
+.about_margin
+    +config.max-width( config.$mobail)
+        margin-bottom: 200px
+
+.mt40
+    +config.max-width( config.$mobail)
+        margin-top: 40px
+
+.factory_title
+    @include config.montserrat400
+    font-size: 28px
+    line-height: 32px
+    margin-bottom: 18px
+    color:  config.$gold
+    +config.max-width( config.$mobail)
+        font-size: 16px
+        line-height: 19px
+
+.factory_texts
+    @include config.montserrat300
+    font-size: 18px
+    line-height: 27px
+    color: #000
+    +config.max-width( config.$mobail)
+        font-size: 14px
+        line-height: 21px
+        text-align: left
+
+.pl5
+    padding-left: 5%
+
+.pr5
+    padding-right: 5%
+
+.pl3
+    padding-left: 3%
+    +config.max-width( config.$tablet)
+        padding-left: 5%
+        padding-right: 5%
+
+.pt100
+    padding-top: 100px
+    +config.max-width( config.$mobail)
+        padding-top: 10px
+        padding-right: 30px
+        padding-left: 30px
+
+.int_point
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 20px
+    height: 20px
+    border-radius: 100%
+    background-color: #888
+    padding: 5px
+    border: 3px solid white
+    background-clip: padding-box
+    padding: 5px
+    @include config.hover
+    &::before
+        display: block
+        border: 4px solid  config.$white
+        background-color: #888
+        width: 10px
+        height: 5px
+        border-radius: 100%
+        content: ''
+    &:hover
+        @include config.hover
+        &::before
+            border: 3px solid  config.$white
+
+#point1
+    bottom: 40%
+    left: 75%
+      
+#point2
+    bottom: 70%
+    left: 45%
+        
+#point3
+    bottom: 30%
+    left: 65%
+       
+#point4
+    bottom: 25%
+    left: 10%
+
+#point5
+    bottom: 46%
+    left: 50%
+    +config.max-width( config.$mobail)
+        left: 54%
+
+.tooltips
+    position: relative
+    display: inline-block
+    width: 10px
+    height: 10px
+    .tooltiptexts
+        visibility: hidden
+        width: 200px
+        background-color:  config.$white
+        color: #000
+        text-align: left
+        padding: 12px
+        border-radius: 6px
+        position: absolute
+        z-index: 1
+        bottom: 200%
+        left: -2%
+        margin-left: 20px
+        transition: opacity 0.3s
+        +config.max-width( config.$mobail)
+            width: 175px
+        &::after
+            content: ""
+            position: absolute
+            top: 20%
+            left: -2%
+            margin-left: -5px
+            border-width: 5px
+            border-style: solid
+            border-color: transparent  config.$white transparent transparent
+        a
+            color:  config.$black
+            @include config.montserrat300
+            font-size: 13px
+            line-height: 15px
+            &:hover
+                text-decoration: underline
+        +config.max-width( config.$mobail)
+            bottom: 0
+            left: 0
+            padding: 6px
+
+    #tooltiptext2
+        bottom: -25%
+        +config.max-width( config.$mobail)
+            left: -250px
+        &::after
+            top: 91%
+            +config.max-width( config.$mobail)
+                left: 100%
+                transform: rotate(90deg)
+
+    #tooltiptext1
+        bottom: -25%
+        +config.max-width( config.$mobail)
+            bottom: 25px
+            left: -50px
+        &::after
+            top: 89%
+            +config.max-width( config.$mobail)
+                top: 100%
+                left: 5%
+                transform: rotate(-90deg)
+
+    #tooltiptext3
+        bottom: -25%
+        +config.max-width( config.$mobail)
+            bottom: -100px
+        &::after
+            top: 89%
+            +config.max-width( config.$mobail)
+                top: 3%
+
+    #tooltiptext4
+        bottom: -25%
+        &::after
+            top: 90%
+
+
+    #tooltiptext5
+        bottom: -25%
+        &::after
+            top: 89%
+            +config.max-width( config.$mobail)
+                top: 85%
+    
+
+.modal_brand_title
+    @include config.montserrat300
+    font-size: 12px
+    line-height: 14px
+
+.nozoom_img
+    width: 1160px!important
+    overflow: hidden
+    height: 650px
+    flex-grow: 1
+    object-fit: cover
+    +config.max-width( config.$tablet)
+        overflow:scroll
+    +config.max-width( config.$mobail)
+        overflow:scroll
+        height: 70vh
+        width: 675px!important
+
+.custom_size
+    width: 1160px!important
+    height: 650px
+    scroll-behavior: smooth
+    overflow: hidden
+    scroll-snap-type: x mandatory
+    display: flex
+    +config.max-width( config.$tablet)
+        overflow:scroll
+    +config.max-width( config.$mobail)
+        overflow:scroll
+        height: 70vh
+        width: 675px!important
+
+.interior_arrows
+    display: flex
+    justify-content: flex-end
+    padding: 30px 5% 0 0
+    .interior_arrow_left
+        transform: rotate(180deg)
+        margin-right: 30px
+
+#content
+    width: 100%
+    height: 100%
+    overflow-x: hidden
+    -ms-overflow-style: none
+    scrollbar-width: none 
+    +config.max-width( config.$tablet)
+        overflow-x: scroll
+        height: auto
+    +config.max-width( config.$mobail)
+        overflow-x: scroll
+
+#content::-webkit-scrollbar
+    display: none
+
+.play_vimeo
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+    z-index: 9
+
+h2.h2_custom
+    margin-top: 58px
+    margin-bottom: 25px
+
+h4.custom_h4
+    text-align: left
+
+.pad30
+    padding-left: 30px
+    padding-top: 30px
+
+.content_end
+    display: flex
+    align-items: flex-end
+
+.footer-map
+    +config.max-width( config.$mobail)
+        padding-bottom: 42px
+
+.modal_open_title
+    @include config.montserrat400
+    font-size: 18px
+    line-height: 21px
+    color:  config.$gold
+
+.mini_arrow
+    width: 7px
+    padding-bottom: 3px
+    margin-left: 5px
+
+.max_width
+    +config.max-width( config.$mobail)
+        width: 100vw
+        max-width: 100vw
+
+.no-pad
+    padding-left: 0
+    padding-right: 0
+
+.comm-pod
+    display: none
+    +config.max-width(1200px)
+        display: block
+
+.pr10
+    padding-right: 10%
+
+#title-search-input-mobile
+    display: none
+
+.slick-dots
+    li
+        width: 25px!important
+
+.cp
+    &:hover
+        cursor: pointer

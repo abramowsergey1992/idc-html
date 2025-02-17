@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Product Card</title>
+	<link rel="stylesheet" href="real.css">
+	<link rel="stylesheet" href="./components/product-grid/product-grid.css">
+	<link rel="stylesheet" href="./components/product-card/product-card.css">
+	<link rel="stylesheet" href="./components/banner-stock/banner-stock.css">
+	<link rel="stylesheet" href="./components/catalog-list/catalog-list.css">
+	<link rel="stylesheet" href="./components/banner-kitchen/banner-kitchen.css">
+	<link rel="stylesheet" href="./components/pagenavigation/pagenavigation.css">
+	<link rel="stylesheet" href="./components/brands/brands.css">
+	<link rel="stylesheet" href="./components/search.title/main/style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container">
+
+			<div class="search-page">
+				<div class="search-results__container">
+				<form class="search-results__form" action="" method="get">
+					<div class="search-results__input">
+							<div class="search-header">
+					<div class="full-wrapper">
+						<div class="search-header__wrapper" id="title-search-page">
+							
+								<input id="title-search-page-input" class="form-search__input" placeholder="Поиск по сайту" type="search" name="q" value="" autocomplete="off">
+								<button class="form-search__img" name="s" type="submit" value=""></button>
+							
+						</div>
+					</div>
+				</div>
+			
+					</div></form>
+				
+				</div>
+				<div class="search-page__title">Результаты поиска:  <span>Столы</span></div>
+				<ul class="search-page__categories">
+					<li>
+						<a class="_active" href="index.html">Товары — 20</a>
+					</li>
+					<li>
+						<a href="index.html">Бренды — 5</a>
+					</li>
+				</ul>
+				
+			</div>
+			<div class="products-wrap">
+				<div class="products-wrap__head">
+					<div class="products-wrap__sort">
+						<button class="products-wrap__sort-open">
+							Сортировка по:  
+							<span>релевантности</span>
+						</button>
+						<div class="products-wrap__popup">
+							
+							<div class="products-wrap__sort-title">Сортировать по:</div>
+							<button class="products-wrap__sort-close">
+								<svg >
+									<use href="img/sprite.svg#close"></use>
+								</svg>
+							</button>
+							
+							<div class="products-wrap__popup-body">
+								<label  name="sort" value="1" class="products-wrap__popup-option">
+									<input type="radio">
+									<span>Релевантности</span>
+								</label>
+								<label  name="sort" value="2" class="products-wrap__popup-option">
+									<input type="radio">
+									<span>Цена по возрастанию</span>
+								</label>
+								<label  name="sort" value="3" class="products-wrap__popup-option">
+									<input type="radio">
+									<span>Цена по убыванию</span>
+								</label>
+								<label  name="sort" value="4" class="products-wrap__popup-option">
+									<input type="radio">
+									<span>Новизне</span>
+								</label>
+								<label  name="sort" value="5" class="products-wrap__popup-option">
+									<input type="radio">
+									<span>Наличию на складе</span>
+								</label>
+								<label  name="sort" value="6" class="products-wrap__popup-option">
+									<input type="radio">
+									<span>Бренду</span>
+								</label>
+								<label class="products-wrap__popup-option">
+									<input name="sort" value="7" type="radio">
+									<span>Стране</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="products-grid js-products-observer">
+					<div class="card-product">
+						<div class="card-product__is-new">NEW</div>
+						<div class="card-product__sale">-60%</div>
+						<div class="card-product__slider">
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/339/400_400_1/divan_firenze_117190_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/82d/400_400_1/krovat_coventry_fabric_d_5231_htadboard_edge_in_canaletto_walnut_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/1ed/400_400_1/podsvechnik_lapidos_s_117514_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/339/400_400_1/divan_firenze_117190_array.webp" alt="">
+							</div>
+							<div class="card-product__slider-pagi"></div>
+						</div>
+						
+						<ul class="card-product__tags">
+							<li>
+								<a href="tag.html">Eichholtz</a>
+							</li>
+							<li>
+								<a href="tag.html">Мягкая мебель</a>
+							</li>
+						</ul>
+						<a href="index.html" class="card-product__title">Диван Elan bouclé cream
+							116220 SL40</a>
+						<div class="card-product__bottom">
+							<div class="card-product__price-wrap">
+								<div class="card-product__price">2 631 894</div>
+								<div class="card-product__price-old">2 631 894</div>
+							</div>
+							<div class="card-product__ui add2cart active js-add-to-basket " data-productid="3836979" data-quantity="1" data-isdelay="0">
+								<button class="card-product__add" type="button">В корзину +</button>
+								<button class="card-product__in-basket" type="button">В корзине</button>
+								<!-- <div class="card-product__basket">
+									<button class="card-product__basket-delete" type="button">
+										<svg  viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M3.04354 3.3758V13.4376C3.04344 13.7249 3.09995 14.0095 3.20986 14.275C3.31977 14.5404 3.48092 14.7817 3.6841 14.9848C3.88728 15.188 4.1285 15.3492 4.39398 15.4591C4.65947 15.569 4.94401 15.6255 5.23135 15.6254H11.3565C11.9366 15.6254 12.4928 15.395 12.903 14.9848C13.3131 14.5747 13.5435 14.0184 13.5435 13.4384V3.375M1.29395 3.3758H15.2939" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+											<path d="M5.66895 3.3752V2.0622C5.66873 1.88975 5.70256 1.71896 5.76848 1.55961C5.8344 1.40026 5.93112 1.25548 6.05309 1.13358C6.17507 1.01168 6.3199 0.915047 6.47929 0.849225C6.63869 0.783403 6.8095 0.749685 6.98195 0.750002H9.60635C9.77879 0.749685 9.94961 0.783403 10.109 0.849225C10.2684 0.915047 10.4132 1.01168 10.5352 1.13358C10.6572 1.25548 10.7539 1.40026 10.8198 1.55961C10.8857 1.71896 10.9196 1.88975 10.9193 2.0622V3.3752M6.54455 12.2012V7.828M10.0446 12.2012V7.828" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</button>
+									<button class="card-product__basket-sub" type="button">-</button>
+									<input class="card-product__basket-count" type="number"/>
+									<button class="card-product__basket-add" type="button">+</button>
+								</div> -->
+							</div>
+							
+							
+						</div>
+					</div>
+					<div class="card-product">
+						<div class="card-product__is-new">NEW</div>
+						<div class="card-product__sale">-60%</div>
+						<div class="card-product__slider">
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/339/400_400_1/divan_firenze_117190_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/82d/400_400_1/krovat_coventry_fabric_d_5231_htadboard_edge_in_canaletto_walnut_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/1ed/400_400_1/podsvechnik_lapidos_s_117514_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/339/400_400_1/divan_firenze_117190_array.webp" alt="">
+							</div>
+							<div class="card-product__slider-pagi"></div>
+						</div>
+						
+						<ul class="card-product__tags">
+							<li>
+								<a href="tag.html">Eichholtz</a>
+							</li>
+							<li>
+								<a href="tag.html">Мягкая мебель</a>
+							</li>
+						</ul>
+						<a href="index.html" class="card-product__title">Диван Elan bouclé cream
+							116220 SL40</a>
+						<div class="card-product__bottom">
+							<div class="card-product__price-wrap">
+								<div class="card-product__price">2 631 894</div>
+							</div>
+							<div class="card-product__ui add2cart js-add-to-basket " data-productid="3836979" data-quantity="1" data-isdelay="0">
+								<button class="card-product__add" type="button">В корзину +</button>
+								<button class="card-product__in-basket" type="button">В корзине</button>
+								<!-- <div class="card-product__basket">
+									<button class="card-product__basket-delete" type="button">
+										<svg  viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M3.04354 3.3758V13.4376C3.04344 13.7249 3.09995 14.0095 3.20986 14.275C3.31977 14.5404 3.48092 14.7817 3.6841 14.9848C3.88728 15.188 4.1285 15.3492 4.39398 15.4591C4.65947 15.569 4.94401 15.6255 5.23135 15.6254H11.3565C11.9366 15.6254 12.4928 15.395 12.903 14.9848C13.3131 14.5747 13.5435 14.0184 13.5435 13.4384V3.375M1.29395 3.3758H15.2939" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+											<path d="M5.66895 3.3752V2.0622C5.66873 1.88975 5.70256 1.71896 5.76848 1.55961C5.8344 1.40026 5.93112 1.25548 6.05309 1.13358C6.17507 1.01168 6.3199 0.915047 6.47929 0.849225C6.63869 0.783403 6.8095 0.749685 6.98195 0.750002H9.60635C9.77879 0.749685 9.94961 0.783403 10.109 0.849225C10.2684 0.915047 10.4132 1.01168 10.5352 1.13358C10.6572 1.25548 10.7539 1.40026 10.8198 1.55961C10.8857 1.71896 10.9196 1.88975 10.9193 2.0622V3.3752M6.54455 12.2012V7.828M10.0446 12.2012V7.828" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</button>
+									<button class="card-product__basket-sub" type="button">-</button>
+									<input class="card-product__basket-count" type="number"/>
+									<button class="card-product__basket-add" type="button">+</button>
+								</div> -->
+							</div>
+							
+							
+						</div>
+					</div>
+					<div class="card-product">
+						<div class="card-product__is-new">NEW</div>
+						<div class="card-product__sale">-60%</div>
+						<div class="card-product__slider">
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/339/400_400_1/divan_firenze_117190_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/82d/400_400_1/krovat_coventry_fabric_d_5231_htadboard_edge_in_canaletto_walnut_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/1ed/400_400_1/podsvechnik_lapidos_s_117514_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/339/400_400_1/divan_firenze_117190_array.webp" alt="">
+							</div>
+							<div class="card-product__slider-pagi"></div>
+						</div>
+						
+						<ul class="card-product__tags">
+							<li>
+								<a href="tag.html">Eichholtz</a>
+							</li>
+							<li>
+								<a href="tag.html">Мягкая мебель</a>
+							</li>
+						</ul>
+						<a href="index.html" class="card-product__title">Диван Elan bouclé cream
+							116220 SL40</a>
+						<div class="card-product__bottom">
+							<div class="card-product__price-wrap">
+								<div class="card-product__price">2 631 894</div>
+								<div class="card-product__price-old">2 631 894</div>
+							</div>
+							<div class="card-product__ui add2cart js-add-to-basket " data-productid="3836979" data-quantity="1" data-isdelay="0">
+								<button class="card-product__add" type="button">В корзину +</button>
+								<button class="card-product__in-basket" type="button">В корзине</button>
+								<!-- <div class="card-product__basket">
+									<button class="card-product__basket-delete" type="button">
+										<svg  viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M3.04354 3.3758V13.4376C3.04344 13.7249 3.09995 14.0095 3.20986 14.275C3.31977 14.5404 3.48092 14.7817 3.6841 14.9848C3.88728 15.188 4.1285 15.3492 4.39398 15.4591C4.65947 15.569 4.94401 15.6255 5.23135 15.6254H11.3565C11.9366 15.6254 12.4928 15.395 12.903 14.9848C13.3131 14.5747 13.5435 14.0184 13.5435 13.4384V3.375M1.29395 3.3758H15.2939" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+											<path d="M5.66895 3.3752V2.0622C5.66873 1.88975 5.70256 1.71896 5.76848 1.55961C5.8344 1.40026 5.93112 1.25548 6.05309 1.13358C6.17507 1.01168 6.3199 0.915047 6.47929 0.849225C6.63869 0.783403 6.8095 0.749685 6.98195 0.750002H9.60635C9.77879 0.749685 9.94961 0.783403 10.109 0.849225C10.2684 0.915047 10.4132 1.01168 10.5352 1.13358C10.6572 1.25548 10.7539 1.40026 10.8198 1.55961C10.8857 1.71896 10.9196 1.88975 10.9193 2.0622V3.3752M6.54455 12.2012V7.828M10.0446 12.2012V7.828" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</button>
+									<button class="card-product__basket-sub" type="button">-</button>
+									<input class="card-product__basket-count" type="number"/>
+									<button class="card-product__basket-add" type="button">+</button>
+								</div> -->
+							</div>
+							
+							
+						</div>
+					</div>
+					<div class="card-product">
+						<div class="card-product__is-new">NEW</div>
+						<div class="card-product__sale">-60%</div>
+						<div class="card-product__slider">
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/339/400_400_1/divan_firenze_117190_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/82d/400_400_1/krovat_coventry_fabric_d_5231_htadboard_edge_in_canaletto_walnut_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/1ed/400_400_1/podsvechnik_lapidos_s_117514_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/339/400_400_1/divan_firenze_117190_array.webp" alt="">
+							</div>
+							<div class="card-product__slider-pagi"></div>
+						</div>
+						
+						<ul class="card-product__tags">
+							<li>
+								<a href="tag.html">Eichholtz</a>
+							</li>
+							<li>
+								<a href="tag.html">Мягкая мебель</a>
+							</li>
+						</ul>
+						<a href="index.html" class="card-product__title">Диван Elan bouclé cream
+							116220 SL40</a>
+						<div class="card-product__bottom">
+							<div class="card-product__price-wrap">
+								<div class="card-product__price">2 631 894</div>
+								<div class="card-product__price-old">2 631 894</div>
+							</div>
+							<div class="card-product__ui add2cart js-add-to-basket " data-productid="3836979" data-quantity="1" data-isdelay="0">
+								<button class="card-product__add" type="button">В корзину +</button>
+								<button class="card-product__in-basket" type="button">В корзине</button>
+								<!-- <div class="card-product__basket">
+									<button class="card-product__basket-delete" type="button">
+										<svg  viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M3.04354 3.3758V13.4376C3.04344 13.7249 3.09995 14.0095 3.20986 14.275C3.31977 14.5404 3.48092 14.7817 3.6841 14.9848C3.88728 15.188 4.1285 15.3492 4.39398 15.4591C4.65947 15.569 4.94401 15.6255 5.23135 15.6254H11.3565C11.9366 15.6254 12.4928 15.395 12.903 14.9848C13.3131 14.5747 13.5435 14.0184 13.5435 13.4384V3.375M1.29395 3.3758H15.2939" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+											<path d="M5.66895 3.3752V2.0622C5.66873 1.88975 5.70256 1.71896 5.76848 1.55961C5.8344 1.40026 5.93112 1.25548 6.05309 1.13358C6.17507 1.01168 6.3199 0.915047 6.47929 0.849225C6.63869 0.783403 6.8095 0.749685 6.98195 0.750002H9.60635C9.77879 0.749685 9.94961 0.783403 10.109 0.849225C10.2684 0.915047 10.4132 1.01168 10.5352 1.13358C10.6572 1.25548 10.7539 1.40026 10.8198 1.55961C10.8857 1.71896 10.9196 1.88975 10.9193 2.0622V3.3752M6.54455 12.2012V7.828M10.0446 12.2012V7.828" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</button>
+									<button class="card-product__basket-sub" type="button">-</button>
+									<input class="card-product__basket-count" type="number"/>
+									<button class="card-product__basket-add" type="button">+</button>
+								</div> -->
+							</div>
+							
+							
+						</div>
+					</div>
+					<div class="card-product">
+						<div class="card-product__is-new">NEW</div>
+						<div class="card-product__sale">-60%</div>
+						<div class="card-product__slider">
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/339/400_400_1/divan_firenze_117190_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/82d/400_400_1/krovat_coventry_fabric_d_5231_htadboard_edge_in_canaletto_walnut_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/1ed/400_400_1/podsvechnik_lapidos_s_117514_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/339/400_400_1/divan_firenze_117190_array.webp" alt="">
+							</div>
+							<div class="card-product__slider-pagi"></div>
+						</div>
+						
+						<ul class="card-product__tags">
+							<li>
+								<a href="tag.html">Eichholtz</a>
+							</li>
+							<li>
+								<a href="tag.html">Мягкая мебель</a>
+							</li>
+						</ul>
+						<a href="index.html" class="card-product__title">Диван Elan bouclé cream
+							116220 SL40</a>
+						<div class="card-product__bottom">
+							<div class="card-product__price-wrap">
+								<div class="card-product__price">2 631 894</div>
+								<div class="card-product__price-old">2 631 894</div>
+							</div>
+							<div class="card-product__ui add2cart js-add-to-basket " data-productid="3836979" data-quantity="1" data-isdelay="0">
+								<button class="card-product__add" type="button">В корзину +</button>
+								<button class="card-product__in-basket" type="button">В корзине</button>
+								<!-- <div class="card-product__basket">
+									<button class="card-product__basket-delete" type="button">
+										<svg  viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M3.04354 3.3758V13.4376C3.04344 13.7249 3.09995 14.0095 3.20986 14.275C3.31977 14.5404 3.48092 14.7817 3.6841 14.9848C3.88728 15.188 4.1285 15.3492 4.39398 15.4591C4.65947 15.569 4.94401 15.6255 5.23135 15.6254H11.3565C11.9366 15.6254 12.4928 15.395 12.903 14.9848C13.3131 14.5747 13.5435 14.0184 13.5435 13.4384V3.375M1.29395 3.3758H15.2939" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+											<path d="M5.66895 3.3752V2.0622C5.66873 1.88975 5.70256 1.71896 5.76848 1.55961C5.8344 1.40026 5.93112 1.25548 6.05309 1.13358C6.17507 1.01168 6.3199 0.915047 6.47929 0.849225C6.63869 0.783403 6.8095 0.749685 6.98195 0.750002H9.60635C9.77879 0.749685 9.94961 0.783403 10.109 0.849225C10.2684 0.915047 10.4132 1.01168 10.5352 1.13358C10.6572 1.25548 10.7539 1.40026 10.8198 1.55961C10.8857 1.71896 10.9196 1.88975 10.9193 2.0622V3.3752M6.54455 12.2012V7.828M10.0446 12.2012V7.828" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</button>
+									<button class="card-product__basket-sub" type="button">-</button>
+									<input class="card-product__basket-count" type="number"/>
+									<button class="card-product__basket-add" type="button">+</button>
+								</div> -->
+							</div>
+							
+							
+						</div>
+					</div>
+					<div class="card-product">
+						<div class="card-product__is-new">NEW</div>
+						<div class="card-product__sale">-60%</div>
+						<div class="card-product__slider">
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/339/400_400_1/divan_firenze_117190_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/82d/400_400_1/krovat_coventry_fabric_d_5231_htadboard_edge_in_canaletto_walnut_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/1ed/400_400_1/podsvechnik_lapidos_s_117514_array.webp" alt="">
+							</div>
+							<div class="card-product__slide">
+								<img src="https://rc.idcollection.ru/upload/webp/resize_cache/339/400_400_1/divan_firenze_117190_array.webp" alt="">
+							</div>
+							<div class="card-product__slider-pagi"></div>
+						</div>
+						
+						<ul class="card-product__tags">
+							<li>
+								<a href="tag.html">Eichholtz</a>
+							</li>
+							<li>
+								<a href="tag.html">Мягкая мебель</a>
+							</li>
+						</ul>
+						<a href="index.html" class="card-product__title">Диван Elan bouclé cream
+							116220 SL40</a>
+						<div class="card-product__bottom">
+							<div class="card-product__price-wrap">
+								<div class="card-product__price">2 631 894</div>
+								<div class="card-product__price-old">2 631 894</div>
+							</div>
+							<div class="card-product__ui add2cart js-add-to-basket " data-productid="3836979" data-quantity="1" data-isdelay="0">
+								<button class="card-product__add" type="button">В корзину +</button>
+								<button class="card-product__in-basket" type="button">В корзине</button>
+								<!-- <div class="card-product__basket">
+									<button class="card-product__basket-delete" type="button">
+										<svg  viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M3.04354 3.3758V13.4376C3.04344 13.7249 3.09995 14.0095 3.20986 14.275C3.31977 14.5404 3.48092 14.7817 3.6841 14.9848C3.88728 15.188 4.1285 15.3492 4.39398 15.4591C4.65947 15.569 4.94401 15.6255 5.23135 15.6254H11.3565C11.9366 15.6254 12.4928 15.395 12.903 14.9848C13.3131 14.5747 13.5435 14.0184 13.5435 13.4384V3.375M1.29395 3.3758H15.2939" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+											<path d="M5.66895 3.3752V2.0622C5.66873 1.88975 5.70256 1.71896 5.76848 1.55961C5.8344 1.40026 5.93112 1.25548 6.05309 1.13358C6.17507 1.01168 6.3199 0.915047 6.47929 0.849225C6.63869 0.783403 6.8095 0.749685 6.98195 0.750002H9.60635C9.77879 0.749685 9.94961 0.783403 10.109 0.849225C10.2684 0.915047 10.4132 1.01168 10.5352 1.13358C10.6572 1.25548 10.7539 1.40026 10.8198 1.55961C10.8857 1.71896 10.9196 1.88975 10.9193 2.0622V3.3752M6.54455 12.2012V7.828M10.0446 12.2012V7.828" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</button>
+									<button class="card-product__basket-sub" type="button">-</button>
+									<input class="card-product__basket-count" type="number"/>
+									<button class="card-product__basket-add" type="button">+</button>
+								</div> -->
+							</div>
+							
+							
+						</div>
+					</div>
+				</div>
+				<div class="pagenav-container " >
+					<nav class="pagenavigation">
+						<div class="pagenavigation__wrapper">
+							<div class="pagenavigation__nav unactive pagenavigation__nav--prev" title="Предыдущая"></div>
+								<div class="pagenavigation__element active">1</div>
+								<a data-ajax-id="6fd3883b7129de4373fc49028553514e" data-next-page="2" data-show-more="1" data-max-page="18" class="pagenavigation__element js-add-more-page" href="/catalogue/producers/?PAGEN_1=2">2</a>
+								<a data-ajax-id="6fd3883b7129de4373fc49028553514e" data-next-page="3" data-show-more="1" data-max-page="18" class="pagenavigation__element js-add-more-page" href="/catalogue/producers/?PAGEN_1=3">3</a>
+								<div class="pagenavigation__dots">...</div>
+								<a data-ajax-id="6fd3883b7129de4373fc49028553514e" data-next-page="18" data-show-more="1" data-max-page="18" class="pagenavigation__element js-add-more-page" href="/catalogue/producers/?PAGEN_1=18">18</a>
+								<a data-ajax-id="6fd3883b7129de4373fc49028553514e" data-next-page="2" data-max-page="18" data-show-more="1" class="pagenavigation__nav pagenavigation__nav--next js-add-more-page" href="/catalogue/producers/?PAGEN_1=2" title="Следующая"> </a>
+							</div>
+				</nav>
+				</div>
+				<button type="button" class="show-more">показать больше</button>
+				
+			</div>
+			<div class="brands">
+				<h2>Бренды</h2>
+				<div class="brands__grid">
+					<div class="card-brand">
+						<div class="card-brand__img-wrap">
+							<img src="img/brand-1.png" alt="" class="card-brand__img">
+						</div>
+						<a href="#" class="card-brand__title">MIDJ</a>
+						<div class="card-brand__desc">
+							<p>Мебельная компания Midj была создана в 1987 году. Уже через несколько ...</p>
+						</div>
+						<div class="card-brand__more">подррбнее</div>
+					</div>
+					<div class="card-brand">
+						<div class="card-brand__img-wrap">
+							<img src="img/brand-2.png" alt="" class="card-brand__img">
+						</div>
+						<a href="#" class="card-brand__title">ARPER</a>
+						<div class="card-brand__desc">
+							<p>Известный на весь мир итальянский бренд, предлагающий элегантные</p>
+						</div>
+						<div class="card-brand__more">подррбнее</div>
+					</div>
+					<div class="card-brand">
+						<div class="card-brand__img-wrap">
+							<img src="img/brand-3.png" alt="" class="card-brand__img">
+						</div>
+						<a href="#" class="card-brand__title">Cattelan Italia</a>
+						<div class="card-brand__desc">
+							<p>Итальянская мебель давно завоевала признание российских </p>
+						</div>
+						<div class="card-brand__more">подррбнее</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="components/catalog-list/catalog-list.js"></script>
+	<script src="components/product-card/producr-card.js"></script>
+	<script src="components/product-grid/product-grid.js"></script>
+</body>
+</html>

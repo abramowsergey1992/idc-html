@@ -1,0 +1,103 @@
+@charset "UTF-8"
+@use "../../global/include/_config.sass"
+
+// Постраничная навигация
+// ======================
+.pagenavigation
+	position: relative
+
+	&__nav--prev
+		margin-right: 40px
+	&__nav--next
+		margin-left: 40px
+	&__wrapper
+		display: flex
+		justify-content: center
+		+config.max-width( config.$mobail)
+			display: flex
+			justify-content: center
+
+	&__block-wrap
+		position: relative
+		margin: 20px 0 0 0
+		width: 100%
+		min-width: 290px
+		font-size: 0
+		line-height: 0
+		position: relative
+		text-align: center
+		padding: 25px 0
+		+config.max-width( config.$mobail)
+			padding: 20px 0
+
+		&:before
+			content: ''
+			position: absolute
+			left: -9999px
+			right: -9999px
+			height: 1px
+			background: #d5d9db
+			top: 0
+
+
+
+	&__top
+		position: relative
+		font: 500 11px/130%  config.$font
+		position: relative
+		color: #213c57
+		text-align: center
+		text-transform: uppercase
+		margin: 0 0 5px 0
+
+
+	&__element
+		font: 300 20px/40px  config.$font
+		position: relative
+  
+		+config.max-width( config.$tablet)
+			font: 300 18px/40px  config.$font
+		+config.max-width( config.$mobail)
+			font: 300 16px/40px  config.$font
+
+
+	&__element
+		display: inline-block
+		position: relative
+		color:  config.$color
+		text-decoration: none
+		vertical-align: top
+		text-align: center
+		height: 40px
+		width: auto
+		border-radius: 40px
+		overflow: hidden
+		background-color: transparent
+		padding: 0 3px
+		transition: background .3s ease
+		margin: 0 8px
+		color: #8f8e8e
+		&.active
+			text-decoration: none
+			color: #000
+
+
+	&__nav
+		position: relative
+		display: inline-block
+		vertical-align: top
+		transition: opacity .3s ease
+		text-decoration: none
+		font: 300 20px/40px  config.$font
+		position: relative
+		color: #000000
+		+config.max-width( config.$tablet)
+			font: 300 18px/40px  config.$font
+		+config.max-width( config.$mobail)
+			font: 300 16px/40px  config.$font
+			display: none
+
+		&.unactive
+			cursor: default
+
+

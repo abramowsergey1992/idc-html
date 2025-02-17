@@ -1,0 +1,602 @@
+@charset "UTF-8"
+@use "_config.sass"
+
+button[disabled]
+  opacity: 0.5
+
+  &:hover,
+  &:active
+    opacity: 0.8
+
+// кнопки
+// ======
+.button
+  display: block
+  position: relative
+  transition: color .3s ease, background .3s ease, opacity .3s ease, box-shadow .3s ease
+  border: 0 none
+  margin: 0 0 15px 0
+  text-align: center
+  background: transparent
+  height: 40px
+  @include config.montserrat400
+  font-size: 16px
+  line-height: 20px
+  color:  config.$white
+  border-radius: 20px
+  padding: 0 40px
+  min-width: 100px
+  box-shadow: 0px 7px 18px 0px rgba(169, 127, 72, 0.2)
+  +config.max-width( config.$tablet)
+    font-size: 14px
+    line-height: 16px
+  +config.max-width( config.$mobail)
+    margin-left: auto
+    padding: 0 30px
+    margin-right: auto
+    font-size: 12px
+    line-height: 14px
+
+  &:hover
+    opacity: 1
+    border: 0 none
+    outline: 0 none !important
+    box-shadow: 0px 7px 18px 0px rgba(169, 127, 72, 0.41)
+
+  &:active
+    background:  config.$hover
+    box-shadow: none
+    border: 0 none
+    outline: 0 none !important
+
+  &--nomargin
+    margin: 0 auto
+
+  &--full
+    width: 100%
+    +config.max-width( config.$mobail)
+      width: auto
+
+  &--gold
+    color:  config.$gold
+    @include config.montserrat400
+    font-size: 22px
+    line-height: 25px
+    border: none
+    box-shadow: none
+    padding: 0
+
+    &:hover
+      box-shadow: none
+      border: none
+      color:  config.$gold !important
+
+  &--min
+    @include config.montserrat400
+    font-size: 16px
+    line-height: 20px
+
+  &--big
+    @include config.montserrat400
+    font-size: 22px
+    line-height: 25px
+    text-transform: uppercase
+
+  &--buy
+    margin: 0
+    @include config.montserrat400
+    font-size: 22px
+    line-height: 25px
+    box-shadow: none
+    min-width: auto
+    padding: 0
+    height: 30px
+    width: 100%
+    color:  config.$white
+    background:  config.$black
+    transform: scale(0.95)
+    @include config.hover
+
+    &:hover
+      box-shadow: none
+      transform: scale(1.00)
+      background:  config.$gold
+      @include config.hover
+
+    .button-buy
+      position: relative
+      display: inline-block
+      text-align: center
+
+      &--noactive
+        display: inline-block
+
+      &--active
+        display: none
+
+  &--buy-full
+    margin: 0
+    @include config.montserrat400
+    font-size: 12px
+    line-height: 16px
+    padding: 0
+    width: 100%
+    box-shadow: none
+    +config.max-width( config.$tablet)
+      font-size: 12px
+      line-height: 14px
+      max-width: none
+
+    .button-buy
+      position: relative
+      display: inline-block
+      text-align: center
+
+      &--noactive
+        display: inline-block
+
+      &--active
+        display: none
+
+  &--buy-opacity
+    background: #DBBE99
+
+    &:hover
+      background:  config.$link
+
+  &--center
+    margin-right: auto !important
+    margin-left: auto !important
+
+  &--decor
+    position: relative
+
+    &:before
+      content: ''
+      position: absolute
+      background: linear-gradient(to right, #f4e8d9 0%, #dcb88a 99%, #cf9e5e 100%)
+      height: 1px
+      left: -2000px
+      width: 2000px
+      opacity: 0.2
+      top: 50%
+
+    &:after
+      content: ''
+      position: absolute
+      background: linear-gradient(to left, #f4e8d9 0%, #dcb88a 99%, #cf9e5e 100%)
+      height: 1px
+      width: 2000px
+      right: -2000px
+      opacity: 0.2
+      top: 50%
+
+  &--showroom
+    border: 1px solid  config.$link
+    background-color:  config.$white
+    color: #3d3d3d
+    height: 44px
+    @include config.montserrat400
+    font-size: 14px
+    line-height: 16px
+    box-shadow: none
+    cursor: pointer
+    text-transform: uppercase
+    max-width: 229px
+    width: 100%
+    padding: 0
+    margin: 0
+    +config.max-width( config.$sm-tablet)
+      margin: 0 auto
+
+    span
+      color:  config.$link
+
+    &:hover
+      opacity: 1
+      border: 1px solid #989898
+      outline: 0 none !important
+      background-color:  config.$white
+
+    &:active
+      background-color:  config.$white
+      box-shadow: none
+      border: 1px solid #989898
+      outline: 0 none !important
+
+  &--border
+    border: 1px solid #a4a4a4
+    background-color: transparent
+    color:  config.$black
+    margin: 0 auto
+    font: bold 14px/40px  config.$font
+    padding: 0 10px
+
+    &:hover
+      border: 1px solid #a4a4a4
+      background-color: transparent
+
+    +config.max-width( config.$mobail)
+      width: 100%
+      max-width: 300px
+
+  &--buy-color
+    border: 1px solid  config.$link
+    background-color:  config.$white
+    color:  config.$link
+    padding: 0 5px
+    margin: 0
+    width: 100%
+    box-shadow: none
+    +config.max-width( config.$tablet)
+      font: bold 10px/30px  config.$font
+      white-space: nowrap
+
+    &:hover
+      border: 1px solid  config.$link
+      background-color:  config.$link
+      color:  config.$white
+
+  &--phone-contacts
+    text-transform: uppercase
+    width: 100%
+    max-width: 140px
+    height: 26px
+    font: 600 13px/122%  config.$font
+    padding: 0 4px
+    +config.max-width( config.$sm-tablet)
+      height: 26px
+      margin: 0
+
+a.button
+  display: table
+
+  &:hover, &:active
+    color:  config.$white
+
+.button-line
+  &:before, &:after
+    content: ""
+    margin: 0 auto
+    position: absolute
+    right: 0
+    width: 50%
+    z-index: -1
+    height: 1px
+    top: 50%
+
+  &:before
+    left: 50%
+    background: linear-gradient(to right, #d8b07c 10%, #f4e8d9 20%)
+
+  &:after
+    right: 50%
+    background: linear-gradient(to left, #d8b07c 10%, #f4e8d9 20%)
+
+  a
+    border-radius: 20px
+    padding: 12px 30px
+    background-color:  config.$color-base-orange
+    display: inline-block
+    color: #fff
+    font: normal 16px/100%  config.$font
+    transition: transform 0.3s
+
+    &:hover
+      color: #fff
+      transform: scale(1.1)
+
+    &:active
+      color: #fff
+
+// Визуальная часть добавления в корзину
+// =====================================
+.catalog-button__item--buy,
+.button--buy,
+.button--buy-full
+  &.active
+    .button-buy--noactive
+      display: none
+
+    .button-buy--active
+      display: inline-block
+
+a.base-href:not([href]), a.base-href-white:not([href]), a.base-href-black:not([href])
+  &:focus
+    text-decoration: underline !important
+
+
+.base-href
+  color:  config.$link !important
+  text-decoration: none
+  @include config.montserrat400
+  font-weight: 400
+  line-height: 21px
+  padding-right: 20px !important
+  position: relative
+  font-size: 19px
+  +config.max-width( config.$tablet)
+    font-size: 16px
+    line-height: 18px
+  &.bold
+    font-weight: 600
+
+  &:focus
+    text-decoration: underline !important
+
+  &:hover
+    transform: scale(1) !important
+    font-weight: 500
+    +config.max-width(767px)
+      text-decoration: underline !important
+
+  &.arrow
+    &:before
+      content: ''
+      position: absolute
+      height: 100%
+      width: 26px
+      right: 0
+      top: 2px
+      background: url("/local/static/build/img/svg/arrowyel.svg") center no-repeat
+      transition: .3s
+
+    &:hover:before
+      right: -10px
+
+    &:focus:before
+      right: 0
+
+    &:after
+      display: none !important
+
+  &.doublearrow
+    &:after
+      //content:  url("/local/static/build/img/svg/doublearrow.svg")
+      top: 1px
+      position: absolute
+      transition: .3s
+      margin-left: 10px
+
+    &:hover:after
+      margin-left: 20px
+
+    &:focus:after
+      margin-left: 10px
+
+    &:before
+      display: none !important
+
+  &.spec-arrow
+    &:before
+      content: ''
+      position: absolute
+      height: 28px
+      width: 33px
+      right: -11px
+      top: -2px
+      background: url("/local/static/build/img/svg/arrowyel.svg") center no-repeat
+      transition: .3s
+
+    &:hover:before
+      right: -21px
+
+    &:focus:before
+      right: 0
+
+    &:after
+      display: none !important
+
+  &.big
+    font-size: 24px
+    +config.max-width( config.$mobail)
+      font-size: 18px
+      margin-top: 5px
+
+    &.arrow:before
+      top: -3px
+      height: 150%
+      right: -11px
+
+    &.arrow:hover:before
+      right: -21px
+
+  &.mid
+    font-size: 20px
+
+  &.min
+    font-size: 14px
+
+  &.med
+    font-size: 22px
+
+.base-href-white
+  color: #fff !important
+  text-decoration: none
+  @include config.montserrat400
+  font-weight: 400
+  line-height: 21px
+  padding-right: 20px !important
+  position: relative
+  font-size: 18px
+  +config.max-width( config.$tablet)
+    font-size: 16px
+    line-height: 18px
+  
+  &:focus
+    text-decoration: underline !important
+
+  &:hover
+    +config.max-width(767px)
+      text-decoration: underline !important
+
+  &.arrow
+    &:before
+      content: ''
+      position: absolute
+      height: 100%
+      width: 26px
+      right: 0
+      top: 2px
+      background: url("/local/static/build/img/svg/whitearrow.svg") center no-repeat
+      transition: .3s
+
+    &:hover:before
+      right: -10px
+
+    &:focus:before
+      right: 0
+
+    &:after
+      display: none !important
+
+  &.doublearrow
+    &:after
+      content: url("/local/static/build/img/svg/whiyearrowdouble.svg")
+      transition: .3s
+      margin-left: 10px
+      position: relative !important
+      top: 0
+
+    &:hover:after
+      margin-left: 20px
+
+    &:focus:after
+      margin-left: 10px
+
+    &:before
+      display: none !important
+
+  &.big
+    font-size: 24px
+
+    &.arrow:before
+      top: -3px
+      height: 150%
+      right: -11px
+
+    &.arrow:hover:before
+      right: -21px
+
+  &.mid
+    font-size: 20px
+
+  &.min
+    font-size: 14px
+
+  &.med
+    font-size: 22px
+
+.base-href-black
+  color: #000
+  text-decoration: none
+  @include config.montserrat400
+  font-weight: 400
+  line-height: 21px
+  padding-right: 30px !important
+  position: relative
+  font-size: 18px
+
+  &:focus
+    text-decoration: underline !important
+
+  &:hover
+    +config.max-width(767px)
+      text-decoration: underline !important
+
+  &.arrow
+    &:before
+      content: ''
+      position: absolute
+      height: 100%
+      width: 26px
+      right: 0
+      top: 2px
+      background: url("/local/static/build/img/svg/arrow-right.svg") center no-repeat
+      transition: .3s
+
+    &:hover:before
+      right: -10px
+
+    &:focus:before
+      right: 0
+
+    &:after
+      display: none !important
+
+  &.doublearrow
+    &:after
+      content: ''
+      position: absolute
+      height: 100%
+      width: 26px
+      right: -8px
+      top: 2px
+      background: url("/local/static/build/img/svg/arrow-right.svg") center no-repeat
+      transition: .3s
+
+    &:hover:after
+      right: -18px
+
+    &:focus:after
+      right: -8px
+
+    &:before
+      display: none !important
+
+  &.big
+    font-size: 24px
+
+    &.arrow:before
+      top: -3px
+      height: 150%
+      right: -11px
+
+    &.arrow:hover:before
+      right: -21px
+
+  &.mid
+    font-size: 20px
+
+  &.min
+    font-size: 14px
+
+  &.med
+    font-size: 22px
+
+
+.arrow-right-slider, .arrow-left-slider
+  position: absolute
+  top: 0
+  cursor: pointer
+  width: 30px
+  height: 30px
+  background: url("/local/static/build/img/svg/slide_arrow_right.svg") center / 30px 30px no-repeat
+  transition: .3s
+
+.arrow-right-slider
+  right: 0
+  &:hover
+    background: url("/local/static/build/img/svg/slide_arrow_right_yel.svg") center / 30px 30px no-repeat
+  &.slick-disabled:hover
+    opacity: .6 !important
+    background: url("/local/static/build/img/svg/slide_arrow_right.svg") center / 30px 30px no-repeat !important
+
+.arrow-left-slider
+  right: 45px
+  transform: rotate(180deg)
+  &:hover
+    background: url("/local/static/build/img/svg/slide_arrow_right_yel.svg") center / 30px 30px no-repeat
+  &.slick-disabled:hover
+    opacity: .6 !important
+    background: url("/local/static/build/img/svg/slide_arrow_right.svg") center / 30px 30px no-repeat !important
+custom-cart-success__icon
+
+button
+  &[type='submit']
+    &:hover
+      cursor: pointer
+
+.catalog-button__item
+  .button--buy
+    background: none!important

@@ -1,0 +1,145 @@
+@use "../../global/include/_config.sass"
+
+.catalog-list
+	display: grid
+	margin-top: 40px
+	grid-template-columns: 1fr 1fr
+	border-right: 1px solid #e2e2e2
+	border-bottom: 1px solid #e2e2e2
+	@media ( max-width:  1024px )
+		grid-template-columns: 1fr  
+	&._no-border
+		border: 0 solid
+
+.catalog-card
+	border: 1px solid #e2e2e2
+	border-right: 0 solid
+	border-bottom: 0 solid
+	padding: 35px 39px
+	display: flex
+	flex-direction: column
+	text-align: left
+	font-family: 'Montserrat', sans-serif
+	@media ( max-width:  1024px )
+		padding: 20px
+	&._new
+		background: #F3F2F1
+		border: 0  solid
+	&._sale
+		background:  #f9f9f9
+		border: 0  solid
+	&__title
+		text-align: left
+		font-weight: 500
+		font-size: 30px
+		line-height: 117%
+		font-family: 'Montserrat', sans-serif
+		letter-spacing: -0.01em
+		color: #000
+		margin-bottom: 4px
+	&__desc
+		font-weight: 400
+		font-size: 12px
+		color: #6a6a6a
+	&__row
+		margin-top: 28px
+		display: grid
+		flex: 1
+		grid-template-columns: 1fr 1fr
+		&:has(.catalog-card__list._row-style)
+			grid-template-columns: auto 173px
+			@media ( max-width:  1024px )
+				grid-template-columns: 1fr 1fr
+	&__list
+		padding: 0
+		margin: 0
+		margin-bottom: 20px
+		&._row-style
+			display: flex
+			flex-direction: row
+			flex-wrap: wrap
+			li
+				
+				&::after
+					display: inline-block 
+					margin: 0 12px
+					content: "/"
+					color: #d5d5d5
+			li:last-child
+				&::after
+					display: none
+		li
+			display: none
+			margin-bottom: 0
+			margin: 0
+			padding: 0
+			text-align: left
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3),
+			&:nth-child(4),
+			&:nth-child(5),
+			&:nth-child(6),
+			&:nth-child(7),
+			&:nth-child(8),
+			&:nth-child(9)
+				display: block
+			.catalog-card._open-category  &
+				display: block
+			a
+				font-weight: 400
+				font-size: 14px
+				letter-spacing: -0.01em
+				color: #000
+				&:hover
+					color: config.$hover
+			&::before
+				display: none
+	
+	&__content
+		display: flex
+		flex-direction: column
+	&__more-category
+		font-weight: 400
+		font-size: 12px
+		color: #6a6a6a
+		cursor: pointer
+		margin-bottom: 53px
+		.catalog-card._open-category  &
+			display: none
+		&:hover
+			color: #000
+	&__img-wrap
+		position: relative
+		flex-direction: row
+		justify-content: flex-end
+		align-items: flex-start
+		img
+			max-width: 100%
+			margin-left: auto
+	&__go
+		font-weight: 500
+		font-size: 15px
+		line-height: 160%
+		margin-top: auto
+		display: flex
+		flex-direction: row
+		gap: 16px
+		align-items: center
+		color: config.$link
+		@media ( max-width:  1024px )
+			font-size: 13px
+			gap:5px
+		&:hover
+			color: config.$hover
+
+			span
+				border-bottom: 1px  solid transparent
+		span 
+			border-bottom: 1px solid #ece6dc
+			padding: 0px 0px 4px 0px
+		svg
+			width: 37px
+			height: 8px
+			@media ( max-width:  1024px )
+				width: 25px

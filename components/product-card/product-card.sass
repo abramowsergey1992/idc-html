@@ -1,0 +1,278 @@
+@use "../../global/include/_config.sass"
+
+.card-product
+	box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.07)
+	background: #fff
+	position: relative
+	padding: 30px
+	display: flex
+	flex-direction: column
+	@media ( max-width:  1024px )
+		padding: 10px
+		padding-bottom: 15px
+	&__slider
+		aspect-ratio:371/329
+		position: relative
+		display: flex
+		flex-direction: row
+		gap: 10px
+		margin: -30px -30px  53px -30px
+		@media ( max-width:  1024px )
+			aspect-ratio:165/145
+			margin: -10px -10px  30px -10px
+	&__slide
+		flex:1
+		&._active
+			img
+				z-index: 3
+		img
+			z-index: 1
+			position: absolute
+			left: 0
+			top: 0
+			pointer-events: none
+			width: 100%
+			height: 100%
+			object-fit:contain
+	&__is-new,
+	&__one-tag
+		background: #ecd900
+		font-weight: 600
+		font-size: 14px
+		line-height: 120%
+		letter-spacing: -0.02em
+		text-transform: uppercase
+		color: #fff
+		padding:6px 11px
+		position: absolute
+		left:0
+		top: 0
+		z-index: 5
+		pointer-events:none
+		@media ( max-width:  1024px )
+			padding: 7px
+			font-size: 11px
+	&__sale
+		position: absolute
+		padding:7px 12px
+		right: 0
+		top: 0
+		font-weight: 500
+		font-size: 22px
+		line-height: 120%
+		color: #b12729
+		background: #f7eff0
+		z-index: 5
+		pointer-events:none
+		@media ( max-width:  1024px )
+			font-size: 15px
+			padding: 7px
+	&__tags
+		padding: 0
+		margin: 0
+		display: flex
+		flex-direction: row
+		gap: 9px
+		margin-bottom: 9px
+		white-space: nowrap
+		li
+			border: 1px solid #d2d2d2
+			border-radius: 80px
+			padding: 0
+			margin: 0
+			
+			a
+				padding: 8px 10px
+				font-weight: 500
+				font-size: 10px
+				display: inline-block
+				color: #6a6a6a 
+				@media ( max-width:  1024px )
+					font-size: 8px
+					padding: 6px
+				&:hover
+					color:  config.$link
+			&:before
+				display: none
+	&__title
+		font-weight: 500
+		font-size: 15px
+		line-height: 120%
+		letter-spacing: -0.02em
+		color: #000
+		display: block
+		text-align: left
+		margin-bottom: 20px
+		@media ( max-width:  1024px )
+			font-size: 12px
+			margin-bottom: 18px
+		&:hover
+			color:  config.$link
+	&__bottom
+		margin-top: auto
+		display: flex
+		flex-direction: row
+		align-items: center
+		gap:10px
+	&__price
+		font-weight: 500
+		font-size: 24px
+		line-height: 100%
+		letter-spacing: -0.02em
+		color: #000
+		text-align: left
+		@media ( max-width:  1024px )
+			font-size: 18px
+		&::after
+			display: inline-block
+			content: ' ₽'
+			font-size: 16px
+			text-decoration: none
+			margin-left: 4px
+	&__price-old
+		font-weight: 500
+		font-size: 14px
+		line-height: 100%
+		letter-spacing: -0.02em
+		text-decoration: line-through
+		text-align: left
+		color: #a9a9a9
+		@media ( max-width:  1024px )
+			font-size: 13px
+		&::after
+			display: inline-block
+			content:' ₽'
+			text-decoration: none
+			font-size: 11px
+			margin-left: 4px
+	&__ui
+		width: 130px
+		margin-left: auto
+		@media ( max-width:  1024px )
+			width: 27px
+	&__add
+		padding: 11px 5px
+		background:  config.$link
+		font-weight: 600
+		font-size: 15px
+		line-height: 120%
+		letter-spacing: -0.02em
+		color: #fff
+		display: block
+		width: 100%
+		@media ( max-width:  1024px )
+			font-size: 0px
+			width: 27px
+			height: 27px
+			padding: 0
+			text-align: center
+			display: flex
+			flex-direction: row
+			align-items: center
+			justify-items: center
+			justify-content: center
+			&::after
+				content: '+'
+				display: inline-block
+				font-weight: 600
+				font-size: 15px
+				line-height: 120%
+				letter-spacing: -0.02em
+				color: #fff
+		
+		.card-product__ui.active &
+			display: none
+		&:hover
+			background:  config.$hover
+	&__in-basket
+		padding: 11px 5px
+		color:   config.$link
+		border: 1px solid   config.$link
+		font-weight: 600
+		font-size: 15px
+		line-height: 120%
+		letter-spacing: -0.02em
+		background:  #fff
+		display: none
+		width: 100%
+		@media ( max-width:  1024px )
+			font-size: 0px
+			width: 27px
+			height: 27px
+			padding: 0
+			text-align: center
+			display: none
+			flex-direction: row
+			align-items: center
+			justify-items: center
+			justify-content: center
+			.card-product__ui.active &
+				display: flex
+			&::after
+				content: '-'
+				display: inline-block
+				font-weight: 600
+				font-size: 15px
+				line-height: 120%
+				letter-spacing: -0.02em
+				
+		
+		.card-product__ui.active &
+			display: block
+		&:hover
+			background:  config.$hover
+			color: #fff
+	&__basket
+		border: 1px solid #a3a3a3
+		padding: 10px
+		display: flex
+		flex-direction: row
+		align-items: center
+	&__basket-sub,
+	&__basket-add
+		font-size: 24px
+		line-height: 120%
+		letter-spacing: -0.02em
+		color: #000
+		width: 15px
+		&:hover
+			color: config.$hover
+	&__basket-count
+		font-size: 15px
+		line-height: 120%
+		letter-spacing: -0.02em
+		color: #000
+		display: block
+		background:transparent
+		width: 40px
+		text-align: center
+		border: 0 solid
+		margin-left: auto
+		margin-right: auto
+	&__basket-delete
+		width: 14px
+		height: 14px
+		color: #000
+		cursor: pointer
+		&:hover
+			color: config.$red
+	&__slider-pagi-dot
+		width: 3px
+		height: 3px
+		background: rgba(208, 208, 208, 0.5)
+		border-radius: 6px
+		transition: width 0.6s , background 0.3s
+		&._active
+			width: 18px
+			background: #a3a3a3
+	&__slider-pagi
+		position: absolute
+		left: 0
+		bottom:  0
+		width: 100%
+		display: flex
+		flex-direction: row
+		z-index: 3
+		justify-content: center
+	
+		gap: 12px

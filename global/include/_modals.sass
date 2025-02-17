@@ -1,0 +1,182 @@
+@use "_config"
+@charset "UTF-8"
+
+// MODAL
+// =====
+.modal-backdrop
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background-color:  config.$color !important
+  z-index: 1010
+
+  &.fade
+    opacity: 0
+
+  &.show
+    opacity: 0.90 !important
+
+.modal-title
+  @include config.montserrat400
+  font-size: 24px
+  line-height: 31px
+  text-align: left
+
+.modal-text
+  @include config.montserrat300
+  font-size: 16px
+  line-height: 24px
+  text-align: left
+  margin: 8px 0 20px 0
+
+.modal-form
+  display: flex
+  flex-direction: column
+
+  &__input
+    padding: 7px 0
+    @include config.montserrat300
+    font-size: 15px
+    line-height: 17px
+    outline: none
+    cursor: pointer
+    border: none
+    border-bottom: 0.5px solid #000
+    width: 100%
+    margin: 10px 0
+
+    &:focus
+      border-bottom: 0.5px solid #606060
+
+  label
+    width: 100%
+    color: rgba(232, 96, 67, 0.50)
+    @include config.montserrat300
+    font-size: 14px
+
+.modal-href
+  position: relative
+  @include config.montserrat400
+  padding-right: 35px
+  font-size: 22px
+  line-height: 25px
+  cursor: pointer
+  color: #C6AA76
+  margin-top: 20px
+
+  &:before
+    content: ''
+    position: absolute
+    height: 100%
+    width: 46px
+    right: 0
+    top: 2px
+    background: url("/local/static/build/img/svg/arrowyel.svg") center no-repeat
+
+.modal__content
+  display: flex
+  flex-direction: column
+  padding: 40px 50px
+  +config.max-width(500px)
+    padding: 20px
+
+.form-success
+  padding: 40px 50px
+  +config.max-width(500px)
+    padding: 20px
+
+.form-success__title
+  @include config.montserrat400
+  font-size: 24px
+  line-height: 31px
+  text-align: left
+  color: #C6AA76
+  margin-bottom: 8px
+
+.form-success__text
+  margin: 8px 0 0 0 !important
+
+// CUSTOM
+.modal.fade .modal-dialog
+  box-sizing: border-box
+  background:  config.$white
+  z-index: 1020
+  border-radius: 0
+  border: 0 none
+  margin: 30px auto
+
+.modal
+  background-color: transparent
+  padding: 0 !important
+  opacity: 1
+
+.modal-content
+  background-color:  config.$white !important
+  color:  config.$color
+  border-radius: 0 !important
+  border: 0 none !important
+  box-shadow: none !important
+
+.modal-dialog
+  max-width: 550px !important
+  margin: 100px auto
+  padding: 0 !important
+
+.modal-ofert
+  @include config.montserrat300
+  font-size: 10px
+  line-height: 11px
+  margin-top: 8px
+  text-align: left
+
+.close
+  position: absolute
+  right: -60px !important
+  top: -10px !important
+  height: 40px
+  width: 40px
+  border: 0 none
+  bottom: auto
+  background: transparent
+  z-index: 1099
+  cursor: pointer
+  text-shadow: none
+  opacity: 1
+  +config.max-width(640px)
+    right: 0 !important
+    top: -5px !important
+
+  &:before
+    content: ''
+    position: absolute
+    background: url('/local/static/build/img/svg/modalclose.svg') no-repeat center !important
+    background-position: 50% 50%
+    background-size: cover
+    top: 0
+    left: 0
+    height: 40px
+    width: 40px
+    transition: opacity .3s ease
+
+#about_us-more
+  .modal-header
+    .close
+      margin: 0
+      right: 0
+      top: -30px
+
+      &:after
+        opacity: 1
+
+  .modal-body
+    padding: 0
+    padding-top: 15px
+    text-align: left
+
+.form__wrapper-image
+  img
+    width: 100%
+    height: 230px
+    object-fit: cover

@@ -1,0 +1,99 @@
+@use "_config"
+@charset "UTF-8"
+
+// Списки
+// ======
+
+ul, ol
+	margin: 10px 0 20px
+	text-align: left
+	list-style: none
+
+ul
+	padding: 0 0 0 25px
+	+config.max-width( config.$mobail)
+		padding: 0
+		text-align: center
+
+	li
+		position: relative
+		margin: 0 0 10px 0
+		list-style-type: none
+		+config.max-width( config.$mobail)
+			padding: 25px 0 0 0
+			margin: 0 0 20px 0
+
+		&:before
+			content: ""
+			position: absolute
+			width: 10px
+			height: 10px
+			border-radius: 10px
+			overflow: hidden
+			left: -20px
+			background:  config.$hover
+			top: 5px
+			+config.max-width( config.$mobail)
+				top: 5px
+				left: calc(50% - 5px)
+
+ul.slick-slider-dots
+	li
+		&:before
+			display: none
+		button
+			&::before
+				font-size: 5px
+				color: transparent
+				border-radius: 100%
+				border: 1px solid rgba(198, 170, 118, 0.5)
+	li.slick-active
+		&:before
+			display: none
+		button
+			&::before
+				font-size: 8px
+				color: transparent
+				border-radius: 100%
+				border: 4px solid  config.$gold
+
+ol
+	counter-reset: li
+	padding: 0 0 0 30px
+	+config.max-width( config.$mobail)
+		padding: 0
+		text-align: center
+
+	li
+		position: relative
+		margin: 0 0 10px
+		+config.max-width( config.$mobail)
+			padding: 25px 0 0 0
+			margin: 0 0 20px 0
+
+		&:before
+			content: counters(li,".") "."
+			counter-increment: li
+			position: absolute
+			top: 0
+			left: -45px
+			width: 40px
+			background-color: transparent
+			text-align: right
+			font-weight: bold
+			color:  config.$hover
+			+config.max-width( config.$mobail)
+				top: 5px
+				left: calc(50% - 5px)
+				text-align: center
+
+ol ol
+	list-style-type: lower-alpha
+	li
+		&:before
+			display: none
+
+.seo__text
+	ul, ol
+		text-align: left
+

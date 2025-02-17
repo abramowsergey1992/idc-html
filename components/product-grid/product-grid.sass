@@ -1,0 +1,408 @@
+@use "../../global/include/_config.sass"
+
+.products-wrap
+	margin-bottom: 60px
+	&__filter
+		position: fixed
+		left: 0
+		top: 0
+		width: 100vw
+		height: 100svh
+		z-index: 100
+		pointer-events: none
+		touch-action: none
+		opacity: 0
+		transition
+		&._open
+			opacity: 1
+			pointer-events: initial
+			touch-action:  initial
+		.bx-filter-button-box .bx-filter-parameters-box-container
+			display: flex
+			flex-direction: column
+			
+		.btn.btn-themes
+			background: #c6aa76
+			padding: 10px
+			font-weight: 600
+			font-size: 15px
+			line-height: 120%
+			letter-spacing: -0.02em
+			color: #fff
+			box-shadow: 0 0 0 0
+			border-radius: 0
+			&:hover
+				background: config.$link
+		.btn.btn-link
+			padding: 10px
+			font-weight: 600
+			font-size: 12px
+			line-height: 292%
+			letter-spacing: -0.01em
+			color: #4a4a4a
+			&:hover
+				color:  #c6aa76s
+		.bx-filter .bx-filter-title
+			font-weight: 500
+			font-size: 40px
+			font-family: 'Montserrat', sans-serif
+			line-height: 120%
+			letter-spacing: -0.01em
+			color: #000
+			padding-left: 5px
+			@media ( max-width:  1024px )
+				font-size: 20px
+				padding-left: 10px
+		.bx-filter .bx-filter-section
+			background: #fff !important
+		.bx-filter-section.container-fluid
+			padding: 85px 108px 30px
+			height: 100svh
+			overflow-x: hidden
+			overflow-y: auto
+			@media ( max-width:  1024px )
+				padding: 20px
+				text-align: left
+				padding-top: 30px
+		.bx-filter .bx-filter-parameters-box-title span
+			font-weight: 500
+			font-size: 16px
+			font-family: 'Montserrat', sans-serif
+			line-height: 219%
+			color: #000
+		.bx-filter .smartfilter
+			max-width: 282px
+		.bx-filter-param-label 
+			padding-left: 32px
+			margin-bottom: 8px
+			position: relative
+			&::after
+				border: 1px solid #d2d3df
+				border-radius: 3px
+				width: 22px
+				height: 22px	
+				display: block
+				position: absolute
+				left: 0
+				top: 0
+				display: block
+				content: ''
+		.bx-filter .bx-filter-param-label:has(input:checked)::after
+			background-color: #C6AA76
+			background-position: center
+			background-repeat: no-repeat
+			border-color: #C6AA76
+			background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 1.33203L3.66667 6.66536L1 3.9987' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+		.bx-ui-slider-track-container
+			margin-left: 0
+		.bx-filter .bx-ui-slider-track
+			height: 2px
+		.bx-filter.bx-blue .bx-ui-slider-handle.left
+			width: 20px
+			height: 20px
+			border-radius:100%
+			background: #fff
+			border: 2px solid #c6aa76
+			margin-left: -11px
+			margin-top: -10px
+		.bx-filter.bx-blue .bx-ui-slider-handle.right
+			width: 20px
+			height: 20px
+			border-radius:100%
+			background: #fff
+			border: 2px solid #c6aa76
+			margin-right: -11px
+			margin-top: -10px
+		.bx-filter .bx-ui-slider-track-container
+			padding-top: 29px
+			padding-bottom: 12px
+			padding-left: 25px
+			padding-right: 25px
+			width: 100%
+		.bx-filter .bx-filter-input-container input
+			border: 1px solid #d2d3df
+			border-radius: 3px
+			padding: 15px 16px
+			font-weight: 400
+			font-size: 13px
+			z-index: 20
+			position: relative
+			&:placeholder-shown
+				z-index: 6
+		.bx-filter .bx-filter-parameters-box-container-block
+			position: relative
+			.bx-ft-sub
+				position: absolute
+				left: 31px
+				top: 10px
+				z-index: 10
+				font-weight: 400
+				font-size: 13px
+				color: #000
+				pointer-events: none
+	
+					
+		.bx-filter.bx-blue .bx-ui-slider-pricebar-vn
+			background: #d9d9d9
+		.bx-filter.bx-blue .bx-ui-slider-pricebar-v
+			background: #c6aa76
+		.bx-ui-slider-part
+			display: none
+		.bx-filter .bx-filter-input-checkbox .bx-filter-param-text
+			font-weight: 400
+			font-size: 13px
+			line-height: 22px
+			color: #000
+		.bx-filter .bx-filter-input-checkbox  input
+			opacity: 0
+		.bx-filter .bx-ui-slider-range
+			z-index: 80
+	&__filter-close
+		position: absolute
+		top: 90px
+		right: 100px
+		z-index: 2
+		@media ( max-width:  1024px )
+			top: 20px
+			right: 20px
+		svg
+			width: 42px
+			height: 42px
+			@media ( max-width:  1024px )
+				width: 22px
+				height: 22px
+	&__filter-overlay
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background: rgba(1, 2, 4, 0.1)
+		transition: opacity 0.3s
+		opacity: 1
+		.products-wrap__filter._open &
+			opacity: 1
+	&__filter-popup
+		max-width: 986px
+		position: absolute
+		right: 0
+		box-shadow: 0 20px 80px 0 rgba(13, 12, 33, 0.25)
+		background: #fff
+		top: 0
+		width: 100%
+		height: 100%
+		transition: transform 0.6s
+		transform: translateX(100%)
+		.products-wrap__filter._open &
+			transform: translateX(0%)
+	&__title
+		color: #000
+		margin-bottom: 30px
+		font-weight: 500
+		font-family: 'Montserrat', sans-serif
+		font-size: 40px
+		line-height: 87%
+		letter-spacing: -0.01em
+	&__category-wrap
+		position: relative
+		padding-bottom: 1px
+		&::before
+			transform: translateX(-50%)
+			left: 50%
+			height: 1px	
+			width: 100vw		
+			background: #e8e8e8
+			display: block
+			position: absolute
+			bottom: 0
+			content: ''
+	&__categories
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		gap:12px 9px
+		padding: 0
+		margin: 0
+		margin-bottom: 30px
+		li
+			margin: 0
+			padding: 0
+			&::before,
+			&::after
+				display: none	
+			a
+				border: 1px solid #d2d2d2
+				border-radius: 80px
+				padding: 6px 10px
+				font-weight: 400
+				line-height: 100%
+				font-size: 13px
+				color: #6a6a6a
+				&:hover
+					border-color: #000
+				&._active
+					color: #000
+					border-color: #000
+	&__sub-categories
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		gap: 0px
+		padding: 0
+		margin: 0
+		margin-bottom: 30px
+		
+		li
+			margin: 0
+			padding: 0
+			&::before
+				display: none
+			&::after
+				display: inline-block
+				content: "/"
+				margin: 0 8px  0 5px
+				font-size: 10px
+				color: #b7b7b7
+			&:last-child::after
+				display: none
+			a 
+				font-weight: 400
+				font-size: 13px
+				color: #323232
+	&__head
+		display: flex
+		flex-direction: row
+		margin-top: 30px
+	&__filter-open
+		border: 1px solid #000
+		border-radius: 80px
+		padding: 10px 15px
+		display: flex
+		flex-direction: row
+		gap:10px
+		font-weight: 500
+		font-size: 13px
+		color: #000
+		svg
+			width: 16px
+			height: 16px
+	&__sort
+		position: relative
+		z-index: 10
+		margin-right: auto
+	
+	&__sort-title
+		font-weight: 500
+		font-size: 20px
+		line-height: 175%
+		letter-spacing: -0.01em
+		color: #000
+		@media ( max-width:  1024px )
+			font-size: 18px
+	&__sort-close
+		position: absolute
+		right: 35px
+		top: 30px
+		width: 18px
+		cursor: pointer
+		height: 18px
+		color: #000
+		&:hover
+			color: config.$red
+		svg
+			width: 18px
+			height: 18px
+	&__sort-open
+		font-weight: 500
+		font-size: 13px
+		line-height: 269%
+		letter-spacing: -0.01em
+		color: #000
+		position: relative
+		
+		span
+			@media ( max-width:  1024px )
+			font-size: 0
+			
+			color: #8f8e8e
+			&::after
+				background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 1L5 5L1 1' stroke='%238F8E8E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+				display: inline-block
+				content: ""
+				@media ( max-width:  1024px )
+					font-size: 12px
+				width: 10px
+				height: 6px
+				margin-left: 6px
+				transition: transform 0.3s
+				.products-wrap__sort._open &
+					transform: rotate(180deg)
+	&__popup
+		box-shadow: 0 4px 100px 0 rgba(0, 0, 0, 0.2)
+		background: #fff
+		padding: 23px 35px
+		position: absolute
+		left: 99px
+		top: 40px	
+		min-width: 309px
+		touch-action: none
+		pointer-events: none
+		opacity: 0
+		transform: translateY(30px) scale(0.9)
+		transition: transform 0.5s, opacity 0.3s
+		text-align: left
+		@media ( max-width:  1024px )
+			left: 0
+		.products-wrap__sort._open &
+			touch-action: initial
+			pointer-events: initial
+			opacity: 1
+			transform: translateY(0px)  scale(1)
+	&__popup-body
+		display: flex
+		margin-top: 15px
+		flex-direction: column
+		gap:15px
+			
+		@media ( max-width:  1024px )
+			gap:6px
+	&__popup-option
+		display: block
+		position: relative
+		input
+			width: 100%
+			height: 100%
+			position: absolute
+			opacity: 0
+		font-weight: 500
+		font-size: 15px
+		line-height: 120%
+		letter-spacing: -0.02em
+		color: #000
+		text-align: left
+		@media ( max-width:  1024px )
+			font-size: 11px
+		&:hover
+			color: config.$hover
+.products-grid
+	display: grid
+	grid-template-columns: 1fr 1fr 1fr
+	gap:24px
+	margin-top: 40px
+	margin-bottom: 60px
+	@media ( max-width:  1024px )
+		grid-template-columns:   1fr 1fr
+		gap:8px
+.show-more
+	border: 1px solid currentColor
+	padding: 10px
+	font-weight: 500
+	font-size: 15px
+	line-height: 120%
+	letter-spacing: -0.02em
+	color: #8f8e8e
+	margin-left: auto
+	margin-top: 30px
+	margin-right: auto
+	&:hover
+		color: config.$hover

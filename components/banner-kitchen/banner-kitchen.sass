@@ -1,0 +1,76 @@
+.banner-kitchen
+	margin-top: 40px
+	aspect-ratio: 1158/473
+	position: relative
+	display: flex
+	flex-direction: column
+	align-items: center
+	overflow: hidden
+	justify-content: center
+	@media ( max-width:  1024px )
+		aspect-ratio: initial
+		min-height: 300px
+	&__content
+		color: #fff
+		position: relative
+		z-index: 11
+		text-align: center
+	&__go
+		font-weight: 500
+		font-size: 15px
+		line-height: 160%
+		margin-top: auto
+		display: flex
+		flex-direction: row
+		gap: 16px
+		align-items: center
+		justify-content: center
+		color: #fff
+		&::after
+			width: 100vw
+			height:  100vh
+			left: 50%
+			top: 50%
+			position: absolute
+			content: ''
+			transform: translateX(-50%) translateY(-50%)
+		&:hover
+			color: #fff
+			span
+				border-bottom: 1px  solid transparent
+		span 
+			border-bottom: 1px solid #e4e0d8
+			padding: 0px 0px 4px 0px
+		svg
+			width: 37px
+			height: 8px
+
+	&__title
+		font-weight: 500
+		font-size: 30px
+		line-height: 117%
+		margin-bottom: 7px
+		letter-spacing: -0.01em
+		font-family: 'Montserrat', sans-serif
+	&__bg
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		img,video
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			object-fit: cover
+		&::after
+			background: rgba(19, 6, 6, 0.25)
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			display: block
+			content: ''
