@@ -106,7 +106,10 @@
 		cursor: pointer
 		margin-bottom: 53px
 		.catalog-card._open-category  &
-			display: none
+			font-size: 0
+			&::after
+				font-size: 12px
+				content: 'Скрыть'
 		&:hover
 			color: #000
 	&__img-wrap

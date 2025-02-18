@@ -13,7 +13,7 @@ document.querySelectorAll('.catalog-card').forEach((card)=>{
 		more.classList.add('catalog-card__more-category')
 		more.innerText = `еще ${category.length-9} ${declOfNum(category.length - 9,["категория","категории","категорий"])}`
 		more.addEventListener('click',()=>{
-			card.classList.add('_open-category')
+			card.classList.toggle('_open-category')
 		})
 		list.after(more)
 	}

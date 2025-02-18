@@ -1,21 +1,21 @@
 @charset "UTF-8";
 @font-face {
   font-family: "Gilroy";
-  src: url("/local/static/assets/fonts/Gilroy-Light.woff2") format("woff2"), url("/local/static/assets/fonts/Gilroy-Light.woff") format("woff");
+  src: url("fonts/Gilroy-Light.woff2") format("woff2"), url("fonts/Gilroy-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Gilroy";
-  src: url("/local/static/assets/fonts/Gilroy-Regular.woff2") format("woff2"), url("/local/static/assets/fonts/Gilroy-Regular.woff") format("woff");
+  src: url("fonts/Gilroy-Regular.woff2") format("woff2"), url("fonts/Gilroy-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Gilroy";
-  src: url("/local/static/assets/fonts/Gilroy-Medium.woff2") format("woff2"), url("/local/static/assets/fonts/Gilroy-Medium.woff") format("woff");
+  src: url("fonts/Gilroy-Medium.woff2") format("woff2"), url("fonts/Gilroy-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -315,7 +315,11 @@
   margin-bottom: 53px;
 }
 .catalog-card._open-category .catalog-card__more-category {
-  display: none;
+  font-size: 0;
+}
+.catalog-card._open-category .catalog-card__more-category::after {
+  font-size: 12px;
+  content: "Скрыть";
 }
 .catalog-card__more-category:hover {
   color: #000;

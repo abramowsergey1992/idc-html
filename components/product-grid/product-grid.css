@@ -1,21 +1,21 @@
 @charset "UTF-8";
 @font-face {
   font-family: "Gilroy";
-  src: url("/local/static/assets/fonts/Gilroy-Light.woff2") format("woff2"), url("/local/static/assets/fonts/Gilroy-Light.woff") format("woff");
+  src: url("fonts/Gilroy-Light.woff2") format("woff2"), url("fonts/Gilroy-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Gilroy";
-  src: url("/local/static/assets/fonts/Gilroy-Regular.woff2") format("woff2"), url("/local/static/assets/fonts/Gilroy-Regular.woff") format("woff");
+  src: url("fonts/Gilroy-Regular.woff2") format("woff2"), url("fonts/Gilroy-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Gilroy";
-  src: url("/local/static/assets/fonts/Gilroy-Medium.woff2") format("woff2"), url("/local/static/assets/fonts/Gilroy-Medium.woff") format("woff");
+  src: url("fonts/Gilroy-Medium.woff2") format("woff2"), url("fonts/Gilroy-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -524,7 +524,7 @@
 .products-wrap__head {
   display: flex;
   flex-direction: row;
-  margin-top: 30px;
+  margin-top: 17px;
 }
 .products-wrap__filter-open {
   border: 1px solid #000;
@@ -583,8 +583,12 @@
   position: relative;
 }
 .products-wrap__sort-open span {
-  font-size: 0;
   color: #8f8e8e;
+}
+@media (max-width: 1024px) {
+  .products-wrap__sort-open span {
+    font-size: 0;
+  }
 }
 .products-wrap__sort-open span::after {
   background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 1L5 5L1 1' stroke='%238F8E8E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
@@ -669,7 +673,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
-  margin-top: 40px;
+  margin-top: 25px;
   margin-bottom: 60px;
 }
 @media (max-width: 1024px) {
