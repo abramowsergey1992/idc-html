@@ -489,7 +489,7 @@
   opacity: 1;
 }
 .products-wrap__filter-popup {
-  max-width: 986px;
+  max-width: 50%;
   position: absolute;
   right: 0;
   box-shadow: 0 20px 80px 0 rgba(13, 12, 33, 0.25);
@@ -499,6 +499,14 @@
   height: 100%;
   transition: transform 0.6s;
   transform: translateX(100%);
+}
+@media (max-width: 1024px) {
+  .products-wrap__filter-popup {
+    max-width: min(90%, 400px);
+    transform: translateX(-100%);
+    left: 0;
+    right: initial;
+  }
 }
 .products-wrap__filter._open .products-wrap__filter-popup {
   transform: translateX(0%);
