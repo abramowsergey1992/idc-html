@@ -12,7 +12,7 @@
 		pointer-events: none
 		touch-action: none
 		opacity: 0
-		transition
+		
 		&._open
 			opacity: 1
 			pointer-events: initial
@@ -49,13 +49,22 @@
 			line-height: 120%
 			letter-spacing: -0.01em
 			color: #000
-			padding-left: 5px
+			margin-bottom: 30px
+		
 			@media ( max-width:  1024px )
 				font-size: 20px
-				padding-left: 10px
 		.bx-filter .bx-filter-section
 			background: #fff !important
-		.bx-filter-section.container-fluid
+		.bx-filter-box__search
+			border: 1px solid #d2d3df
+			border-radius: 3px
+			font-weight: 400
+			font-size: 13px
+			color: #000
+			padding: 11px 10px
+			width: 100%
+			margin-bottom: 20px
+		.bx-filter-section
 			padding: 85px 108px 30px
 			height: 100svh
 			overflow-x: hidden
@@ -64,17 +73,38 @@
 				padding: 20px
 				text-align: left
 				padding-top: 30px
+		.bx-filter-box__title,
 		.bx-filter .bx-filter-parameters-box-title span
 			font-weight: 500
 			font-size: 16px
+			margin-bottom: 19px
 			font-family: 'Montserrat', sans-serif
-			line-height: 219%
 			color: #000
 		.bx-filter .smartfilter
 			max-width: 282px
+		.bx-filter-box__items
+			// height: var(--w-height)
+			// transition: height 0.3s
+		.bx-filter-box__visible-toggle
+			font-weight: 600
+			font-size: 12px
+			border-bottom: 1px solid #dfdfdf
+			letter-spacing: -0.01em
+			color: #4a4a4a
+			display: inline-block
+			cursor: pointer 
+			span:nth-child(2)
+				display: none
+		.bx-filter-box._all-visible
+			.bx-filter-box__visible-toggle
+				span:nth-child(1)
+					display: none
+				span:nth-child(2)
+					display: inline
+
 		.bx-filter-param-label 
 			padding-left: 32px
-			margin-bottom: 8px
+			margin-bottom: 5px
 			position: relative
 			&::after
 				border: 1px solid #d2d3df
@@ -84,51 +114,75 @@
 				display: block
 				position: absolute
 				left: 0
-				top: 0
+				top: 1px
 				display: block
 				content: ''
+		.bx-filter .bx-filter-param-label
+			cursor: pointer
 		.bx-filter .bx-filter-param-label:has(input:checked)::after
 			background-color: #C6AA76
 			background-position: center
 			background-repeat: no-repeat
 			border-color: #C6AA76
 			background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 1.33203L3.66667 6.66536L1 3.9987' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+		.bx-filter .bx-filter-param-label:has(input:checked) .bx-filter-param-text
+			font-weight: 500
 		.bx-ui-slider-track-container
 			margin-left: 0
 		.bx-filter .bx-ui-slider-track
 			height: 2px
-		.bx-filter.bx-blue .bx-ui-slider-handle.left
+			position: relative
+		.bx-filter .bx-ui-slider-range, 
+		.bx-filter .bx-ui-slider-pricebar, 
+		.bx-filter .bx-ui-slider-pricebar-vd, 
+		.bx-filter .bx-ui-slider-pricebar-vn, 
+		.bx-filter .bx-ui-slider-pricebar-v 
+			position: absolute
+			top: 0
+			bottom: 0
+		
+		.bx-filter .bx-ui-slider-handle.left
+			position: absolute
+			top: 100%
 			width: 20px
 			height: 20px
 			border-radius:100%
 			background: #fff
 			border: 2px solid #c6aa76
+			display: block
 			margin-left: -11px
-			margin-top: -10px
-		.bx-filter.bx-blue .bx-ui-slider-handle.right
+			margin-top: -11px
+		.bx-filter .bx-ui-slider-handle.right
+			position: absolute
+			top: 100%
 			width: 20px
 			height: 20px
+			display: block
 			border-radius:100%
 			background: #fff
 			border: 2px solid #c6aa76
 			margin-right: -11px
-			margin-top: -10px
+			margin-top: -11px
+		.bx-filter__price-row
+			display: grid
+			grid-auto-columns: 1fr 1fr
+			gap:0  10px
+		.bx-ui-slider-track-container
+			grid-column: span 2
 		.bx-filter .bx-ui-slider-track-container
 			padding-top: 29px
 			padding-bottom: 12px
-			padding-left: 25px
-			padding-right: 25px
+			padding-left: 11px
+			padding-right: 11px
 			width: 100%
 		.bx-filter .bx-filter-input-container input
 			border: 1px solid #d2d3df
 			border-radius: 3px
-			padding: 15px 16px
 			font-weight: 400
 			font-size: 13px
-			z-index: 20
-			position: relative
-			&:placeholder-shown
-				z-index: 6
+			color: #000
+			padding: 11px 10px
+			width: 100%
 		.bx-filter .bx-filter-parameters-box-container-block
 			position: relative
 			.bx-ft-sub
@@ -142,9 +196,9 @@
 				pointer-events: none
 	
 					
-		.bx-filter.bx-blue .bx-ui-slider-pricebar-vn
+		.bx-filter .bx-ui-slider-pricebar-vn
 			background: #d9d9d9
-		.bx-filter.bx-blue .bx-ui-slider-pricebar-v
+		.bx-filter .bx-ui-slider-pricebar-v
 			background: #c6aa76
 		.bx-ui-slider-part
 			display: none
@@ -153,8 +207,25 @@
 			font-size: 13px
 			line-height: 22px
 			color: #000
+		.checkbox
+			&._visible-hidden,
+			&._filter-hidden
+				display: none
+
+		.bx-filter-box._not-more .bx-filter-box__visible-toggle
+			display: none
+		.bx-filter-box._all-visible ._visible-hidden
+			display: block
+
+		.bx-filter-box
+			margin-bottom: 25px
 		.bx-filter .bx-filter-input-checkbox  input
 			opacity: 0
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%	
 		.bx-filter .bx-ui-slider-range
 			z-index: 80
 	&__filter-close

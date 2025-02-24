@@ -37,3 +37,52 @@ document.querySelectorAll('.products-wrap').forEach((wrap)=>{
 		})
 	})
 })
+function filterCatalogToggleVisible(wrap){
+	let i = 0;
+	const container = wrap.querySelector('.bx-filter-block')
+	const items = wrap.querySelectorAll('.checkbox')
+	items.forEach((item)=>{		
+		if(item.classList.contains('_filter-hidden')==false){
+			if(i<3){
+				i++;
+				item.classList.remove('_visible-hidden')
+			} else {
+				item.classList.add('_visible-hidden')
+			}
+		}else{
+			item.classList.remove('_visible-hidden')
+		}
+	})
+
+	if(wrap.querySelectorAll('.checkbox._visible-hidden').length<1){
+		wrap.classList.add('_not-more')
+	}else{
+		wrap.classList.remove('_not-more')
+	}
+	setTimeout(()=>{
+		wrap.style.setProperty("--w-height",container.offsetHeight +'px' );
+	},100)
+}
+document.querySelectorAll('.bx-filter-box').forEach((wrap)=>{
+	const items = wrap.querySelectorAll('.checkbox')
+	const toggle = wrap.querySelector('.bx-filter-box__visible-toggle')
+	const search = wrap.querySelector('.bx-filter-box__search')
+	const container = wrap.querySelector('.bx-filter-block')
+	filterCatalogToggleVisible(wrap)
+	toggle?.addEventListener('click',(e)=>{
+		wrap.classList.toggle('_all-visible')
+		setTimeout(()=>{
+			wrap.style.setProperty("--w-height",container.offsetHeight +'px' );
+		},100)
+	})
+	search?.addEventListener('keyup',(e)=>{
+		items.forEach((item)=>{
+			if(search.value=="" || item.querySelector('.bx-filter-param-text').getAttribute('title').toUpperCase().indexOf(search.value.toUpperCase())>=0) {
+				item.classList.remove('_filter-hidden')
+			}else{
+				item.classList.add('_filter-hidden')
+			}
+		})
+		filterCatalogToggleVisible(wrap)
+	})
+})
