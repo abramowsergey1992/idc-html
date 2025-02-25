@@ -72,16 +72,20 @@
 		margin: 0
 		display: flex
 		flex-direction: row
+		flex-wrap: wrap
 		gap: 9px
 		margin-bottom: 9px
 		white-space: nowrap
+		@media ( max-width:  1024px )
+			gap: 2px 5px
 		li
 			border: 1px solid #d2d2d2
 			border-radius: 80px
 			padding: 0
 			margin: 0
-			
+			line-height: 0
 			a
+				line-height: 130%
 				padding: 8px 10px
 				font-weight: 500
 				font-size: 10px
@@ -89,7 +93,7 @@
 				color: #6a6a6a 
 				@media ( max-width:  1024px )
 					font-size: 8px
-					padding: 6px
+					padding:4px 6px
 				&:hover
 					color:  config.$link
 			&:before
