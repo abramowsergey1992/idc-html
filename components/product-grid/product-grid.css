@@ -415,10 +415,14 @@
   color: #000;
   pointer-events: none;
 }
-.products-wrap__filter .bx-filter .bx-ui-slider-pricebar-vn {
+.products-wrap__filter .bx-ui-slider-track {
   background: #d9d9d9;
 }
-.products-wrap__filter .bx-filter .bx-ui-slider-pricebar-v {
+.products-wrap__filter .bx-filter .bx-ui-slider-pricebar-v,
+.products-wrap__filter .bx-filter .bx-ui-slider-pricebar-vn {
+  background: transparent !important;
+}
+.products-wrap__filter .bx-filter .bx-ui-slider-pricebar-vd {
   background: #c6aa76;
 }
 .products-wrap__filter .bx-ui-slider-part {
