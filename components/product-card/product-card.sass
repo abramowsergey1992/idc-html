@@ -112,6 +112,34 @@
 			margin-bottom: 18px
 		&:hover
 			color:  config.$link
+	&__similar
+		display: flex
+		flex-direction: row
+		position: absolute
+		right: 30px
+		bottom: 18px
+		gap: 8px
+		align-items: center
+		box-shadow: 0px 4px 20px 0px #0000001A
+		background: #fff
+		color:  config.$link !important
+		padding: 7px 13px
+		border-radius: 800px
+		z-index: 10
+		font-size: 13px
+		line-height: 15px
+		font-weight: 600
+		svg
+			width: 16px	
+			height: 16px
+		&:hover
+			color:  config.$hover
+		@media ( max-width:  1024px )
+			font-size: 0px
+			gap: 0
+			right: 10px
+			bottom: 10px
+			padding: 7px
 	&__bottom
 		margin-top: auto
 		display: flex
