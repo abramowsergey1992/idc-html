@@ -606,6 +606,8 @@
   display: flex;
   flex-direction: row;
   margin-top: 17px;
+  z-index: 20;
+  position: relative;
 }
 .products-wrap__filter-open {
   border: 1px solid #000;
