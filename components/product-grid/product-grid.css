@@ -626,7 +626,7 @@
 }
 .products-wrap__sort {
   position: relative;
-  z-index: 10;
+  z-index: 4;
   margin-right: auto;
 }
 .products-wrap__sort-title {
