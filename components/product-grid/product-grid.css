@@ -226,7 +226,7 @@
   border-radius: 0;
 }
 .products-wrap__filter .btn.btn-themes:hover {
-  background: #c6aa76;
+  background: #c18e49;
 }
 .products-wrap__filter .btn.btn-link {
   padding: 10px;
@@ -235,9 +235,10 @@
   line-height: 292%;
   letter-spacing: -0.01em;
   color: #4a4a4a;
+  text-decoration: none;
 }
 .products-wrap__filter .btn.btn-link:hover {
-  color: #c6aa76s;
+  color: #c18e49;
 }
 .products-wrap__filter .bx-filter .bx-filter-title {
   font-weight: 500;
@@ -301,6 +302,9 @@
 }
 .products-wrap__filter .bx-filter-box__visible-toggle span:nth-child(2) {
   display: none;
+}
+.products-wrap__filter .bx-filter-box__visible-toggle:hover {
+  border-color: transparent;
 }
 .products-wrap__filter .bx-filter-box._all-visible .bx-filter-box__visible-toggle span:nth-child(1) {
   display: none;
