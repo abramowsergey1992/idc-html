@@ -32,6 +32,7 @@
 			top: 0
 			pointer-events: none
 			width: 100%
+			object-fit: contain
 			height: 100%
 			object-fit:contain
 	&__is-new,
@@ -112,6 +113,11 @@
 			margin-bottom: 18px
 		&:hover
 			color:  config.$link
+	&__in-stock
+		margin-top: -20px
+		margin-bottom: 20px
+		font-size: 12px
+		text-transform: uppercase
 	&__similar
 		display: flex
 		flex-direction: row
@@ -143,11 +149,12 @@
 	&__bottom
 		margin-top: auto
 		display: flex
-		flex-direction: row
-		align-items: center
+		align-items: flex-start
+		flex-direction: column
 		gap: 10px
+		&._column-style,
 		&._no-price
-			gap: 0
+			
 			.card-product__ui
 				width: 100%
 	&__price
@@ -182,10 +189,11 @@
 			font-size: 11px
 			margin-left: 4px
 	&__ui
-		width: 130px
+		// width: 130px
+		width: 100%
 		margin-left: auto
 		@media ( max-width:  1024px )
-			width: 27px
+			// width: 27px
 	&__add
 		padding: 11px 5px
 		background:  config.$link
@@ -196,25 +204,25 @@
 		color: #fff
 		display: block
 		width: 100%
-		@media ( max-width:  1024px )
-			font-size: 0px
-			width: 27px
-			height: 27px
-			padding: 0
-			text-align: center
-			display: flex
-			flex-direction: row
-			align-items: center
-			justify-items: center
-			justify-content: center
-			&::after
-				content: '+'
-				display: inline-block
-				font-weight: 600
-				font-size: 15px
-				line-height: 120%
-				letter-spacing: -0.02em
-				color: #fff
+		// @media ( max-width:  1024px )
+		// 	font-size: 0px
+		// 	width: 27px
+		// 	height: 27px
+		// 	padding: 0
+		// 	text-align: center
+		// 	display: flex
+		// 	flex-direction: row
+		// 	align-items: center
+		// 	justify-items: center
+		// 	justify-content: center
+		// 	&::after
+		// 		content: '+'
+		// 		display: inline-block
+		// 		font-weight: 600
+		// 		font-size: 15px
+		// 		line-height: 120%
+		// 		letter-spacing: -0.02em
+		// 		color: #fff
 		
 		.card-product__ui.active &
 			display: none
