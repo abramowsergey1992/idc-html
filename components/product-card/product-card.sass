@@ -24,17 +24,18 @@
 		flex:1
 		&._active
 			img
-				z-index: 3
+				opacity: 1
 		img
-			z-index: 1
+			opacity: 0
 			position: absolute
 			left: 0
 			top: 0
 			pointer-events: none
 			width: 100%
+			object-position: center
 			object-fit: contain
 			height: 100%
-			object-fit:contain
+			object-fit: contain
 	&__is-new,
 	&__one-tag
 		background: #ecd900
@@ -49,7 +50,7 @@
 		left:0
 		top: 0
 		z-index: 5
-		pointer-events:none
+		pointer-events: none
 		@media ( max-width:  1024px )
 			padding: 7px
 			font-size: 11px
@@ -64,7 +65,7 @@
 		color: #b12729
 		background: #f7eff0
 		z-index: 5
-		pointer-events:none
+		pointer-events: none
 		@media ( max-width:  1024px )
 			font-size: 15px
 			padding: 7px
@@ -118,6 +119,7 @@
 		margin-bottom: 20px
 		font-size: 12px
 		text-transform: uppercase
+		text-align: left
 	&__similar
 		display: flex
 		flex-direction: row
@@ -287,7 +289,7 @@
 		letter-spacing: -0.02em
 		color: #000
 		display: block
-		background:transparent
+		background: transparent
 		width: 40px
 		text-align: center
 		border: 0 solid

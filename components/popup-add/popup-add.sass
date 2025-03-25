@@ -1,0 +1,232 @@
+@use "../../global/include/_config.sass"
+
+.popup-add
+	position: fixed
+	top: 74px
+	right: 74px
+	z-index: 41	
+	max-width: 568px
+	box-shadow: 0px 4px 100px 0px #00000033
+	background: #fff
+	pointer-events: none
+	touch-action: none
+	opacity: 0
+	transition: transform 0.3s, opacity  0.3s
+	transform: translateY(100px)
+	@media (max-width: 762px)
+		right: 20px
+		top: 20px
+		max-width: calc(100vw -  50px)
+	&._open
+		pointer-events: initial
+		touch-action: initial
+		opacity: 1
+		transform: translateY(0px)
+	&__close
+		position: absolute
+		right: 34px
+		top: 28px	
+		svg
+			pointer-events: none
+	&__go
+		font-weight: 500
+		font-size: 15px
+		line-height: 160%
+		margin-top: auto
+		display: flex
+		flex-direction: row
+		gap: 16px
+		align-items: center
+		color: config.$link
+		@media ( max-width:  1024px )
+			font-size: 13px
+			gap:5px
+		&:hover
+			color: config.$hover
+
+			span
+				border-bottom: 1px  solid transparent
+		span 
+			border-bottom: 1px solid #ece6dc
+			padding: 0px 0px 4px 0px
+		svg
+			width: 37px
+			height: 8px
+			@media ( max-width:  1024px )
+				width: 25px
+
+	&__head
+		padding: 15px 39px
+		padding-bottom: 29px
+		border-bottom: 1px solid #e8e8e8
+		text-align: left
+		h3 
+			font-weight: 500
+			font-size: 24px
+			line-height: 146%
+			letter-spacing: -0.01em
+			color: #000
+			margin-bottom: 3px
+		p
+			font-weight: 400
+			font-size: 12px
+			color: #6a6a6a
+			margin-bottom: 0
+	&__product
+		padding: 20px 36px
+	&__product-body
+		padding-top: 5px
+	&__product-row
+		display: grid
+		grid-template-columns: 1fr 2fr
+		gap: 19px
+		@media (max-width: 500px)
+			grid-template-columns: 1fr
+			gap: 0
+			
+	&__product-img-wrap
+		position: relative
+	&__product-img
+		aspect-ratio: 1/1
+		@media (max-width: 500px)
+			margin-left: auto
+			margin-right: auto
+			width: 150px
+	&__product-is-new,
+	&__product-one-tag
+		background: #ecd900
+		font-weight: 600
+		font-size: 10px
+		line-height: 120%
+		letter-spacing: -0.02em
+		text-transform: uppercase
+		color: #fff
+		padding: 4.5px 10px
+		position: absolute
+		left:0
+		top: 4px
+		z-index: 5
+		pointer-events:none
+
+	&__product-sale
+		position: absolute
+		padding: 4.5px 10px
+		right: 0
+		top: 4px
+		font-weight: 500
+		font-size: 10px
+		line-height: 120%
+		color: #b12729
+		background: #f7eff0
+		z-index: 5
+		pointer-events: none
+
+	&__product-tags
+		padding: 0
+		margin: 0
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		gap: 9px
+		margin-bottom: 9px
+		white-space: nowrap
+		margin-bottom: 9px
+		@media ( max-width:  1024px )
+			gap: 2px 5px
+		li
+			border: 1px solid #d2d2d2
+			border-radius: 80px
+			padding: 0
+			margin: 0
+			line-height: 0
+			a
+				line-height: 130%
+				padding: 4px 11px
+				font-weight: 500
+				font-size: 10px
+				display: inline-block
+				color: #6a6a6a 
+				@media ( max-width:  1024px )
+					font-size: 8px
+					padding:4px 6px
+				&:hover
+					color:  config.$link
+			&:before
+				display: none
+	&__product-title
+		font-weight: 500
+		font-size: 15px
+		line-height: 120%
+		letter-spacing: -0.02em
+		color: #000
+		text-align: left
+		display: block
+		margin-bottom: 14px
+	&__product-price
+		font-weight: 500
+		font-size: 24px
+		line-height: 100%
+		letter-spacing: -0.02em
+		color: #000
+		text-align: left
+		@media ( max-width:  1024px )
+			font-size: 18px
+		&::after
+			display: inline-block
+			content: ' ₽'
+			font-size: 16px
+			text-decoration: none
+			margin-left: 4px
+	&__product-bottom
+		display: flex
+		flex-direction: row
+		align-items: center
+		margin-bottom: 22px
+	&__product-basket
+		border: 1px solid #a3a3a3
+		padding: 4px 7px
+		width: 130px
+		margin-left: auto
+		display: flex
+		flex-direction: row
+	&__product-basket-sub
+		._delete-active &
+			display: none
+	&__product-basket-delete
+		display: none
+		width: 30px
+		svg
+			width: 18px
+			color: red
+		._delete-active &
+			display: block
+	&__product-basket-sub,
+	&__product-basket-add
+		font-weight: 400
+		width: 30px
+		text-align: center
+		font-size: 24px
+		cursor: pointer
+		&:hover
+			color: config.$hover
+	&__product-basket-count
+		border: 0 solid
+		width: 30px
+		padding-left: 0
+		padding-right: 0
+		margin-left: auto
+		margin-right: auto
+		font-weight: 500
+		font-size: 15px
+		line-height: 120%
+		text-align: center
+		letter-spacing: -0.02em
+		padding: 0
+		-moz-appearance: textfield
+		-webkit-appearance: textfield
+		appearance: textfield
+		&::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button 
+			-webkit-appearance: none
+			margin: 0
+    
