@@ -436,6 +436,8 @@
 .popup-add__product-basket-delete svg {
   width: 18px;
   color: red;
+  pointer-events: none;
+  touch-action: none;
 }
 ._delete-active .popup-add__product-basket-delete {
   display: block;

@@ -7,7 +7,7 @@ function productsInit(){
 		slides.forEach((slide, index)=>{
 			const dot = document.createElement("span");
 			dot.classList.add('card-product__slider-pagi-dot')
-			pagi.appendChild(dot)
+			pagi?.appendChild(dot)
 			if(index==0){
 				dot.classList.add('_active')
 				slide.classList.add('_active')
