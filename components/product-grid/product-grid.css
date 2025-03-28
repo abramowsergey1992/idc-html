@@ -530,6 +530,7 @@
 }
 .products-wrap__category-wrap {
   position: relative;
+  padding-top: 1px;
   padding-bottom: 1px;
 }
 .products-wrap__category-wrap::before {
@@ -610,7 +611,7 @@
   display: flex;
   flex-direction: row;
   margin-top: 17px;
-  z-index: 20;
+  z-index: 1;
   position: relative;
 }
 .products-wrap__filter-open {
